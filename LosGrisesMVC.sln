@@ -8,7 +8,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosGrisesWeb", "LosGrisesWe
 		{181EC739-BDBE-4161-915D-C4A814F86E79} = {181EC739-BDBE-4161-915D-C4A814F86E79}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosGrisesServices", "..\LosGrisesServices\LosGrisesServices\LosGrisesServices.csproj", "{181EC739-BDBE-4161-915D-C4A814F86E79}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosGrisesServices", "LosGrisesServices\LosGrisesServices.csproj", "{181EC739-BDBE-4161-915D-C4A814F86E79}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
