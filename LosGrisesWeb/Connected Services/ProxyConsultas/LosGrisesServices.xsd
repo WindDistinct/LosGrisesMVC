@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LosGrisesServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LosGrisesServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfLibroAlquilado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LibroAlquilado" nillable="true" type="tns:LibroAlquilado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLibroAlquilado" nillable="true" type="tns:ArrayOfLibroAlquilado" />
+  <xs:complexType name="LibroAlquilado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Titulo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VecesAlquilado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LibroAlquilado" nillable="true" type="tns:LibroAlquilado" />
+  <xs:complexType name="ArrayOfEjemplar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Ejemplar" nillable="true" type="tns:Ejemplar" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEjemplar" nillable="true" type="tns:ArrayOfEjemplar" />
+  <xs:complexType name="Ejemplar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Cantidad" type="xs:int" />
+      <xs:element minOccurs="0" name="Disponibilidad" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Libro" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ejemplar" nillable="true" type="tns:Ejemplar" />
+  <xs:complexType name="ArrayOfGeneroSolicitado">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GeneroSolicitado" nillable="true" type="tns:GeneroSolicitado" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGeneroSolicitado" nillable="true" type="tns:ArrayOfGeneroSolicitado" />
+  <xs:complexType name="GeneroSolicitado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Genero" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VecesSolicitado" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GeneroSolicitado" nillable="true" type="tns:GeneroSolicitado" />
+  <xs:complexType name="ArrayOfEditorialAlquilada">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="EditorialAlquilada" nillable="true" type="tns:EditorialAlquilada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEditorialAlquilada" nillable="true" type="tns:ArrayOfEditorialAlquilada" />
+  <xs:complexType name="EditorialAlquilada">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Editorial" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="VecesAlquilada" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="EditorialAlquilada" nillable="true" type="tns:EditorialAlquilada" />
+  <xs:complexType name="ArrayOfRenta">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Renta" nillable="true" type="tns:Renta" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfRenta" nillable="true" type="tns:ArrayOfRenta" />
+  <xs:complexType name="Renta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cliente" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lib_nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="rent_fec" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="rent_id" type="xs:int" />
+      <xs:element minOccurs="0" name="rent_obs" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Renta" nillable="true" type="tns:Renta" />
+</xs:schema>

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "LibrosAlquilados";
+}
+
+<h2>¿Cuales son los libros más rentados?</h2>
+
+@using (Html.BeginForm("FiltrarLibrosAlquilados", "Consulta"))
+{
+    <label for="FechaInicio">Fecha Inicio:</label>
+    <input type="date" id="FechaInicio" name="FechaInicio" required />
+
+    <label for="FechaFin">Fecha Fin:</label>
+    <input type="date" id="FechaFin" name="FechaFin" required />
+
+    <input type="text" id="Libro" name="Libro" />
+
+    <button type="submit" name="FiltrarLibrosAlquilados">Filtrar</button>
+}
+
+<table>
+    <tr>
+        <th>
+            Libro
+        </th>
+        <th>
+            Cantidad
+        </th>
+    </tr>
+    @foreach (var libro in ViewBag.ObtenerLibrosMasAlquilados)
+    {
+        <tr>
+            <th>@libro.Titulo</th>
+            <th>@libro.VecesAlquilado</th>
+        </tr>
+
+    }
+</table>

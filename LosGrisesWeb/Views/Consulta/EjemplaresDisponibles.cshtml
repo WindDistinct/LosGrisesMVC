@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "EjemplaresDisponibles";
+}
+
+<h2>¿Cuántos ejemplares se encuentran disponibles para su renta?</h2>
+
+@using (Html.BeginForm("BuscarLibro", "Consulta"))
+{
+    <label for="Libro">Buscar disponibilidad:</label>
+    <input type="text" id="Libro" name="Libro" />
+
+    <button type="submit" name="BuscarLibro">Buscar</button>
+}
+
+<table>
+    <tr>
+        <th>
+            Libro
+        </th>
+        <th>
+            Cantidad
+        </th>
+        <th>
+            Disponibilidad
+        </th>
+    </tr>
+    @foreach (var ejemplar in ViewBag.EjemplaresDisponibles)
+    {
+        <tr>
+            <th>@ejemplar.Libro</th>
+            <th>@ejemplar.Cantidad</th>
+            <th>@ejemplar.Disponibilidad</th>
+        </tr>
+
+    }
+</table>

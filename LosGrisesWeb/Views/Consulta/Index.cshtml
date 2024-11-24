@@ -1,0 +1,14 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<ul class="navbar-nav flex-grow-1">
+    <li>@Html.ActionLink("Editoriales con más rentas", "EditorialesAlquiladas", "Consulta", new { area = "" }, new { @class = "nav-link" })</li>
+    <li>@Html.ActionLink("Disponibilidad de ejemplares", "EjemplaresDisponibles", "Consulta", new { area = "" }, new { @class = "nav-link" })</li>
+    <li>@Html.ActionLink("Géneros rentados recurrentes", "GenerosSolicitados", "Consulta", new { area = "" }, new { @class = "nav-link" })</li>
+    <li>@Html.ActionLink("Libros más rentados", "LibrosAlquilados", "Consulta", new { area = "" }, new { @class = "nav-link" })</li>
+    <li>@Html.ActionLink("Rentas entre fechas", "RentasXFechas", "Consulta" , new { area = "" }, new { @class = "nav-link" })</li>
+</ul>

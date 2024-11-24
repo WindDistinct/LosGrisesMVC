@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewBag.Title = "GenerosSolicitados";
+}
+
+<h2>GenerosSolicitados</h2>
+
+<table>
+    <tr>
+        <th>
+            Género
+        </th>
+        <th>
+            Libros Rentados
+        </th>
+    </tr>
+    @foreach (var genero in ViewBag.ObtenerGenerosMasSolicitados)
+    {
+        <tr>
+            <th>@genero.Genero</th>
+            <th>@genero.VecesSolicitado</th>
+        </tr>
+
+    }
+</table>

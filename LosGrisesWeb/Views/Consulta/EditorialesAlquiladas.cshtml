@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "EditorialesAlquiladas";
+}
+
+<h2>¿Qué editoriales tienen los libros más solicitados por nuestros clientes?</h2>
+
+@using (Html.BeginForm("EditorialesXRentas", "Consulta"))
+{
+    <label for="FechaInicio">Fecha Inicio:</label>
+    <input type="date" id="FechaInicio" name="FechaInicio" required />
+
+    <label for="FechaFin">Fecha Fin:</label>
+    <input type="date" id="FechaFin" name="FechaFin" required />
+
+    <button type="submit" name="EditorialesXRentas">Filtrar</button>
+}
+
+<table>
+    <tr>
+        <th>
+            Editorial
+        </th>
+        <th>
+            Libros Alquilados
+        </th>
+    </tr>
+    @foreach (var editorial in ViewBag.EditorialesMasAlquiladas)
+    {
+        <tr>
+            <th>@editorial.Editorial</th>
+            <th>@editorial.VecesAlquilada</th>
+        </tr>
+
+    }
+</table>
