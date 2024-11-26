@@ -26,6 +26,7 @@ namespace LosGrisesServices
 
                 if(objConsulta != null )
                 {
+                    objCliente.cli_id = Convert.ToInt16(objConsulta.cli_id);
                     objCliente.cli_nom = objConsulta.cli_nom;   
                     objCliente.cli_ape = objConsulta.cli_ape;
                     objCliente.cli_dir = objConsulta.cli_dir;

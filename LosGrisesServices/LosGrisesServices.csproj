@@ -56,6 +56,7 @@
     <Compile Include="IServicioConsultas.cs" />
     <Compile Include="IServicioLibro.cs" />
     <Compile Include="IServicioPersonal.cs" />
+    <Compile Include="IServicioUbigeo.cs" />
     <Compile Include="Libreria.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +77,7 @@
     <Compile Include="ServicioConsultas.cs" />
     <Compile Include="ServicioLibro.cs" />
     <Compile Include="ServicioPersonal.cs" />
+    <Compile Include="ServicioUbigeo.cs" />
     <Compile Include="tb_Almacen.cs">
       <DependentUpon>Libreria.tt</DependentUpon>
     </Compile>

@@ -1,0 +1,163 @@
+﻿@model LosGrisesWeb.ProxyCliente.ClienteDC
+
+@{
+    ViewBag.Title = "Details";
+    var alias = ViewBag.ClienteAlias as Dictionary<string, string>;
+}
+
+<h2>Datos del cliente</h2>
+
+<div>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @alias["cli_id"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_id)
+        </dd>
+
+        <dt>
+            @alias["cli_nom"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_nom)
+        </dd>
+        <dt>
+            @alias["cli_ape"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_ape)
+        </dd>
+        <dt>
+            @alias["cli_dni"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_dni)
+        </dd>
+        <dt>
+            @alias["cli_mail"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_mail)
+        </dd>
+        <dt>
+            @alias["cli_tel"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_tel)
+        </dd>
+        <dt>
+            @alias["cli_sex"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_sex)
+        </dd>
+        <dt>
+            @alias["cli_dir"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_dir)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Region)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Region)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Provincia)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Distrito)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Distrito)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.cli_fec_mod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_fec_mod)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.cli_fec_nac)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_fec_nac)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cli_fec_reg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_fec_reg)
+        </dd>
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.cli_state)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_state)
+        </dd>*@
+
+        @*<dt>
+            @Html.DisplayNameFor(model => model.cli_user_mod)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_user_mod)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cli_user_reg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cli_user_reg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ubg_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ubg_id)
+        </dd>*@
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", new { id = Model.cli_id  }) |
+    @Html.ActionLink("Regresar", "Index")
+</p>
