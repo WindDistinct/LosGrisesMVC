@@ -7,38 +7,52 @@
 
 @using (Html.BeginForm("FiltrarRentas", "Consulta"))
 {
-    <label for="FechaInicio">Fecha Inicio:</label>
-    <input type="date" id="FechaInicio" name="FechaInicio" required />
-
-    <label for="FechaFin">Fecha Fin:</label>
-    <input type="date" id="FechaFin" name="FechaFin" required />
-
-    <input type="text" id="Cliente" name="Cliente" />
-
-    <button type="submit" name="FiltrarRentas">Filtrar</button>
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <label for="FechaInicio">Fecha Inicio:</label>
+            <input type="date" id="FechaInicio" name="FechaInicio" class="form-control" required />
+        </div>
+        
+        <div class="col-md-4">
+            <label for="FechaFin">Fecha Fin:</label>
+            <input type="date" id="FechaFin" name="FechaFin" class="form-control" required />
+        </div>
+        
+        <div class="col-md-4">
+            <label for="Cliente" class="form-label">Buscar por Cliente:</label>
+            <input type="text" id="Cliente" name="Cliente" class="form-control"  placeholder="Nombre del cliente" />
+        </div>
+        
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </div>
+    </div>
 }
 
-<table>
-    <tr>
-        <th>
-            Id de Renta
-        </th>
-        <th>
-            Fecha de Renta
-        </th>
-        <th>Cliente</th>
-        <th>Libro</th>
-        <th>Observación</th>
-    </tr>
-    @foreach (var renta in ViewBag.RentasXFechas)
-    {
+<table class="table table-striped table-hover">
+    <thead>
         <tr>
-            <th>@renta.rent_id</th>
-            <th>@renta.rent_fec</th>
-            <th>@renta.cliente</th>
-            <th>@renta.lib_nom</th>
-            <th>@renta.rent_obs</th>
+            <th>
+                Id de Renta
+            </th>
+            <th>
+                Fecha de Renta
+            </th>
+            <th>Cliente</th>
+            <th>Libro</th>
+            <th>Observación</th>
         </tr>
-
-    }
+    </thead>
+    <tbody>
+        @foreach (var renta in ViewBag.RentasXFechas)
+        {
+            <tr>
+                <th>@renta.rent_id</th>
+                <th>@renta.rent_fec</th>
+                <th>@renta.cliente</th>
+                <th>@renta.lib_nom</th>
+                <th>@renta.rent_obs</th>
+            </tr>
+        }
+    </tbody>
 </table>

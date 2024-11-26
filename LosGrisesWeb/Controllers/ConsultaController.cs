@@ -19,7 +19,7 @@ namespace LosGrisesWeb.Controllers
 
         public ActionResult LibrosAlquilados()
         {
-            ViewBag.ObtenerLibrosMasAlquilados = consultasClient.ObtenerLibrosMasAlquilados(DateTime.Now.AddYears(-1),DateTime.Now,null).OrderBy(cantidad => cantidad.VecesAlquilado);
+            ViewBag.ObtenerLibrosMasAlquilados = consultasClient.ObtenerLibrosMasAlquilados(DateTime.Now.AddYears(-1),DateTime.Now,null);
             return View();
         }
 
@@ -35,13 +35,13 @@ namespace LosGrisesWeb.Controllers
 
         public ActionResult GenerosSolicitados()
         {
-            ViewBag.ObtenerGenerosMasSolicitados = consultasClient.ObtenerGenerosMasSolicitados().OrderBy(genero => genero.Genero);
+            ViewBag.ObtenerGenerosMasSolicitados = consultasClient.ObtenerGenerosMasSolicitados().OrderByDescending(genero => genero.VecesSolicitado);
             return View();
         }
 
         public ActionResult EditorialesAlquiladas()
         {
-            ViewBag.EditorialesMasAlquiladas = consultasClient.ObtenerEditorialesMasAlquiladas(DateTime.Now.AddYears(-1), DateTime.Now).OrderBy(cantidad => cantidad.VecesAlquilada);
+            ViewBag.EditorialesMasAlquiladas = consultasClient.ObtenerEditorialesMasAlquiladas(DateTime.Now.AddYears(-1), DateTime.Now).OrderByDescending(cantidad => cantidad.VecesAlquilada);
             return View();
         }
 
@@ -50,14 +50,14 @@ namespace LosGrisesWeb.Controllers
             String fechaInicio = fc["FechaInicio"];
             String fechaFin = fc["FechaFin"];
 
-            ViewBag.EditorialesMasAlquiladas = consultasClient.ObtenerEditorialesMasAlquiladas(Convert.ToDateTime(fechaInicio),Convert.ToDateTime(fechaFin)).OrderBy(cantidad => cantidad.VecesAlquilada);
+            ViewBag.EditorialesMasAlquiladas = consultasClient.ObtenerEditorialesMasAlquiladas(Convert.ToDateTime(fechaInicio),Convert.ToDateTime(fechaFin)).OrderByDescending(cantidad => cantidad.VecesAlquilada);
 
             return View("EditorialesAlquiladas");
         }
 
         public ActionResult EjemplaresDisponibles()
         {
-            ViewBag.EjemplaresDisponibles = consultasClient.ConsultarEjemplaresDisponibles(null);
+            ViewBag.EjemplaresDisponibles = consultasClient.ConsultarEjemplaresDisponibles(null).OrderBy(ejem => ejem.Disponibilidad);
             return View();
         }
         public ActionResult BuscarLibro(FormCollection fc)

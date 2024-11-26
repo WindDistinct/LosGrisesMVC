@@ -7,30 +7,42 @@
 
 @using (Html.BeginForm("EditorialesXRentas", "Consulta"))
 {
-    <label for="FechaInicio">Fecha Inicio:</label>
-    <input type="date" id="FechaInicio" name="FechaInicio" required />
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <label for="FechaInicio">Fecha Inicio:</label>
+            <input type="date" id="FechaInicio" name="FechaInicio" class="form-control" required />
+        </div>
 
-    <label for="FechaFin">Fecha Fin:</label>
-    <input type="date" id="FechaFin" name="FechaFin" required />
+        <div class="col-md-4">
+            <label for="FechaFin">Fecha Fin:</label>
+            <input type="date" id="FechaFin" name="FechaFin" class="form-control" required />
+        </div>
 
-    <button type="submit" name="EditorialesXRentas">Filtrar</button>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Filtrar</button>
+        </div>
+    </div>
 }
 
-<table>
-    <tr>
-        <th>
-            Editorial
-        </th>
-        <th>
-            Libros Alquilados
-        </th>
-    </tr>
-    @foreach (var editorial in ViewBag.EditorialesMasAlquiladas)
-    {
+<table class="table table-striped table-hover">
+    <thead>
         <tr>
-            <th>@editorial.Editorial</th>
-            <th>@editorial.VecesAlquilada</th>
+            <th>
+                Editorial
+            </th>
+            <th>
+                Libros Alquilados
+            </th>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var editorial in ViewBag.EditorialesMasAlquiladas)
+        {
+            <tr>
+                <th>@editorial.Editorial</th>
+                <th>@editorial.VecesAlquilada</th>
+            </tr>
 
-    }
+        }
+    </tbody>  
 </table>

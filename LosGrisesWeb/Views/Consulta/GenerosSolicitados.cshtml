@@ -3,23 +3,28 @@
     ViewBag.Title = "GenerosSolicitados";
 }
 
-<h2>GenerosSolicitados</h2>
+<h2>¿Cuales son los género más solicitados por nuestros clientes?</h2>
 
-<table>
-    <tr>
-        <th>
-            Género
-        </th>
-        <th>
-            Libros Rentados
-        </th>
-    </tr>
-    @foreach (var genero in ViewBag.ObtenerGenerosMasSolicitados)
-    {
+<table class="table table-striped">
+    <thead>
         <tr>
-            <th>@genero.Genero</th>
-            <th>@genero.VecesSolicitado</th>
+            <th>
+                Género
+            </th>
+            <th>
+                Libros Rentados
+            </th>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var genero in ViewBag.ObtenerGenerosMasSolicitados)
+        {
+            <tr>
+                <th>@genero.Genero</th>
+                <th>@genero.VecesSolicitado</th>
+            </tr>
 
-    }
+        }
+    </tbody>
+    
 </table>

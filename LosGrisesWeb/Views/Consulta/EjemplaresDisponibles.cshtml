@@ -7,31 +7,41 @@
 
 @using (Html.BeginForm("BuscarLibro", "Consulta"))
 {
-    <label for="Libro">Buscar disponibilidad:</label>
-    <input type="text" id="Libro" name="Libro" />
-
-    <button type="submit" name="BuscarLibro">Buscar</button>
+    <div class="row g-3 mb-4">
+        <div class="col-md-4">
+            <label for="Libro">Buscar disponibilidad:</label>
+            <input type="text" id="Libro" name="Libro" class="form-control" />
+        </div>
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </div>
+    </div>
 }
 
-<table>
-    <tr>
-        <th>
-            Libro
-        </th>
-        <th>
-            Cantidad
-        </th>
-        <th>
-            Disponibilidad
-        </th>
-    </tr>
-    @foreach (var ejemplar in ViewBag.EjemplaresDisponibles)
-    {
+<table class="table table-striped table-hover">
+    <thead>
         <tr>
-            <th>@ejemplar.Libro</th>
-            <th>@ejemplar.Cantidad</th>
-            <th>@ejemplar.Disponibilidad</th>
+            <th>
+                Libro
+            </th>
+            <th>
+                Cantidad
+            </th>
+            <th>
+                Disponibilidad
+            </th>
         </tr>
+    </thead>
+    <tbody>
+        @foreach (var ejemplar in ViewBag.EjemplaresDisponibles)
+        {
+            <tr>
+                <th>@ejemplar.Libro</th>
+                <th>@ejemplar.Cantidad</th>
+                <th>@ejemplar.Disponibilidad</th>
+            </tr>
 
-    }
+        }
+    </tbody>
+    
 </table>
