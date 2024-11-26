@@ -1,0 +1,134 @@
+﻿@model IEnumerable<LosGrisesWeb.ProxyCliente.ClienteDC>
+
+@{
+    ViewBag.Title = "Index";
+    var alias = ViewBag.ClienteAlias as Dictionary<string, string>;
+}
+
+<h2>Mantenimiento Clientes</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create")*@
+    <a href='@Url.Action("Create", new { controller = "Cliente", action = "Create" })'>
+        <img src="~/Images/Agregar.png" title="Agregar" />  Registrar
+    </a>
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @alias["cli_id"]
+        </th>
+        <th>
+            @alias["cli_nom"]
+        </th>
+        <th>
+            @alias["cli_ape"]
+        </th>
+        <th>
+            @alias["cli_dni"]
+        </th>
+        <th>
+            @alias["cli_mail"]
+        </th>
+        <th>
+            @alias["cli_tel"]
+        </th>
+        <th>
+            @alias["cli_sex"]
+        </th>
+        <th>
+            @alias["cli_dir"]
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Region)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Provincia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Distrito)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_ape)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_dni)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_tel)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_sex)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_dir)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Region)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Provincia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Distrito)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.cli_fec_mod)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.cli_fec_nac)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.cli_fec_reg)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.cli_state)
+        </td>*@
+
+        @*<td>
+            @Html.DisplayFor(modelItem => item.cli_user_mod)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cli_user_reg)
+        </td>*@
+        @*<td>
+            @Html.DisplayFor(modelItem => item.ubg_id)
+        </td>*@
+    <td>
+        @*@Html.ActionLink("Edit", "Edit", new { id = item.cli_id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.cli_id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.cli_id })*@
+
+        <a href='@Url.Action("Edit", new { id = item.cli_id })'>
+            <img src="~/Images/Editar.png" title="Editar" />  Editar
+        </a>
+        <a href='@Url.Action("Details", new { id = item.cli_id })'>
+            <img src="~/Images/Buscar.png" title="Consultar" />  Detalle
+        </a>
+
+    </td>
+    </tr>
+}
+
+</table>

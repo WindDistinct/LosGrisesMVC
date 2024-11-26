@@ -11,7 +11,8 @@ namespace LosGrisesServices
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class tb_Cliente
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,22 +20,46 @@ namespace LosGrisesServices
         {
             this.tb_Renta = new HashSet<tb_Renta>();
         }
-    
+
+        [Display(Name = "Id")]
         public int cli_id { get; set; }
+
+        [Display(Name = "Nombre")]
         public string cli_nom { get; set; }
+
+        [Display(Name = "Apellido")]
         public string cli_ape { get; set; }
+
+        [Display(Name = "Direccion")]
         public string cli_dir { get; set; }
+
+        [Display(Name = "Telefono")]
         public string cli_tel { get; set; }
+
+        [Display(Name = "Email")]
         public string cli_mail { get; set; }
+
+        [Display(Name = "DNI")]
+        [MaxLength(8), MinLength(8)]
+        [RegularExpression("(^[0-9]+$)", ErrorMessage = "Solo digitos")]
         public string cli_dni { get; set; }
+
+        [Display(Name = "Ubigeo")]
         public string ubg_id { get; set; }
+
+        [Display(Name = "Fec Nacimiento")]
         public Nullable<System.DateTime> cli_fec_nac { get; set; }
+
+        [Display(Name = "Sexo")]
         public string cli_sex { get; set; }
         public byte[] cli_foto { get; set; }
         public string cli_user_reg { get; set; }
         public Nullable<System.DateTime> cli_fec_reg { get; set; }
         public string cli_user_mod { get; set; }
         public Nullable<System.DateTime> cli_fec_mod { get; set; }
+
+        [Display(Name = "Estado")]
+        [Range(0,1, ErrorMessage = "Solo 1-Activo o 0-Inactivo")]
         public Nullable<bool> cli_state { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
