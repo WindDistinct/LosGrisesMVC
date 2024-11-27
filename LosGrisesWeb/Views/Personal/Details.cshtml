@@ -1,0 +1,21 @@
+﻿@model LosGrisesWeb.ProxyPersonal.PersonalDC
+
+@{
+    ViewBag.Title = "Detalles del Personal";
+}
+
+<h2>Detalles del Personal</h2>
+
+<div>
+    <h4>@Model.per_nom @Model.per_ape_pat</h4>
+    <p><strong>DNI:</strong> @Model.per_dni</p>
+    <p><strong>Teléfono:</strong> @Model.per_tel</p>
+    <p><strong>Email:</strong> @Model.per_mail</p>
+    <p><strong>Dirección:</strong> @Model.per_dir</p>
+    <p><strong>Fecha de Ingreso:</strong> @Model.per_fec_ing.ToString("dd/MM/yyyy")</p>
+    <p><strong>Estado:</strong> @(Model.per_state == 1 ? "Activo" : "Inactivo")</p>
+</div>
+
+<p>
+    <a href="@Url.Action("Index", "Personal")" class="btn btn-secondary">Volver a la lista</a>
+</p>

@@ -132,6 +132,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ProxyPersonal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProxyUbigeo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -140,6 +145,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ConsultaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -186,8 +192,27 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ProxyPersonal\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxyPersonal\LosGrisesWeb.ProxyPersonal.PersonalDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ProxyPersonal\service.wsdl" />
+    <None Include="Connected Services\ProxyPersonal\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyPersonal\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProxyUbigeo\configuration91.svcinfo" />
     <None Include="Connected Services\ProxyUbigeo\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyPersonal\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyPersonal\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyPersonal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Connected Services\ProxyUbigeo\LosGrisesWeb.ProxyUbigeo.UbigeoDC.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -280,6 +305,10 @@
     <Content Include="Views\Cliente\Details.cshtml" />
     <Content Include="Views\Cliente\Create.cshtml" />
     <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Personal\Create.cshtml" />
+    <Content Include="Views\Personal\Details.cshtml" />
+    <Content Include="Views\Personal\Edit.cshtml" />
+    <Content Include="Views\Personal\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -318,6 +347,7 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Connected Services\ProxyCliente\" />
     <WCFMetadataStorage Include="Connected Services\ProxyConsultas\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyPersonal\" />
     <WCFMetadataStorage Include="Connected Services\ProxyUbigeo\" />
   </ItemGroup>
   <PropertyGroup>

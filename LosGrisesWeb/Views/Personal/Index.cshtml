@@ -1,0 +1,43 @@
+﻿@model IEnumerable<LosGrisesWeb.ProxyPersonal.PersonalDC>
+
+@{
+    ViewBag.Title = "Listado de Personal";
+}
+
+<h2>Listado de Personal</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Personal")" class="btn btn-primary">Registrar Nuevo Personal</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.per_nom)</th>
+            <th>@Html.DisplayNameFor(model => model.per_ape_pat)</th>
+            <th>@Html.DisplayNameFor(model => model.per_dni)</th>
+            <th>@Html.DisplayNameFor(model => model.per_tel)</th>
+            <th>@Html.DisplayNameFor(model => model.per_mail)</th>
+            <th>@Html.DisplayNameFor(model => model.per_state)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.per_nom)</td>
+                <td>@Html.DisplayFor(modelItem => item.per_ape_pat)</td>
+                <td>@Html.DisplayFor(modelItem => item.per_dni)</td>
+                <td>@Html.DisplayFor(modelItem => item.per_tel)</td>
+                <td>@Html.DisplayFor(modelItem => item.per_mail)</td>
+                <td>@Html.DisplayFor(modelItem => item.per_state)</td>
+                <td>
+                    <a href="@Url.Action("Details", "Personal", new { id = item.per_id })">Detalles</a> |
+                    <a href="@Url.Action("Edit", "Personal", new { id = item.per_id })">Editar</a> |
+                    <a href="@Url.Action("Delete", "Personal", new { id = item.per_id })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
