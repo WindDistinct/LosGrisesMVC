@@ -14,11 +14,11 @@ namespace LosGrisesServices
     {
         dbLibreriaEntities Libreria = new dbLibreriaEntities();
 
-        public LibroViewDC ConsultarLibro(Int16 strCodigo)
+        public LibroDC ConsultarLibro(Int16 strCodigo)
         {
             try
             {
-                LibroViewDC objLibro = new LibroViewDC();
+                LibroDC objLibro = new LibroDC();
 
                 tb_Libro libro = (
                     from Libro in Libreria.tb_Libro
@@ -66,11 +66,11 @@ namespace LosGrisesServices
             }
         }
 
-        public List<LibroViewDC> ListarLibro()
+        public List<LibroDC> ListarLibro()
         {
             try
             {
-                List<LibroViewDC> objLista = new List<LibroViewDC>();
+                List<LibroDC> objLista = new List<LibroDC>();
 
                 var query = (
                     from libro in Libreria.tb_Libro
@@ -80,7 +80,7 @@ namespace LosGrisesServices
 
                 foreach (var libro in query)
                 {
-                    LibroViewDC objLibro = new LibroViewDC();
+                    LibroDC objLibro = new LibroDC();
 
                     objLibro.lib_id = (short)libro.lib_id;
                     objLibro.lib_nom = libro.lib_nom;

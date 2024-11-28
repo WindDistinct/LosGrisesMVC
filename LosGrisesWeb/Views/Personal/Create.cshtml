@@ -5,7 +5,7 @@
     var alias = ViewBag.PersonalAlias as Dictionary<string, string>;
 }
 
-<h2>Crear Nuevo Personal</h2>
+<h2 class="mt-5 mb-4">Registrar Personal</h2>
 
 @using (Html.BeginForm("Create", "Personal", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
@@ -79,9 +79,13 @@
             @Html.TextBoxFor(model => model.per_user_mod, new { @class = "form-control" })
         </div>*@
 
-    <div class="form-group">
-        <input type="submit" value="Crear" class="btn btn-primary" />
-        <a href="@Url.Action("Index", "Personal")" class="btn btn-secondary">Cancelar</a>
+    <div class="form-group mt-4">
+        <input type="submit" value="Registrar" class="btn btn-outline-primary mt-2" style="width:100px; height:40px;"/>
+        <br />
+
+        <a href='@Url.Action("Index", "Personal")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+            Regresar
+        </a>
     </div>
 }
 

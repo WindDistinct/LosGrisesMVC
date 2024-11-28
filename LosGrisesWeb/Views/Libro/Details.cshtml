@@ -1,24 +1,93 @@
 ﻿@model LosGrisesWeb.ProxyLibro.LibroDC
 
 @{
-    ViewBag.Title = "Detalles del Libro";
+    ViewBag.Title = "Details";
+    var alias = ViewBag.LibroAlias as Dictionary<string, string>;
 }
 
-<h2>Detalles del Libro</h2>
+<h2>Datos del libro</h2>
 
 <div>
-    <h4>@Model.lib_nom</h4>
-    <p><strong>Autor:</strong> @Model.aut_id</p>
-    <p><strong>Género:</strong> @Model.gen_id</p>
-    <p><strong>Editorial:</strong> @Model.lib_edi</p>
-    <p><strong>Fecha de Publicación:</strong> @Model.lib_fec_pub</p>
-    <p><strong>Stock Disponible:</strong> @Model.lib_disp_stock</p>
-    <p><strong>Editorial ID:</strong> @Model.edi_id</p>
-    <p><strong>Fecha de Registro:</strong> @Model.lib_fec_reg?.ToString("dd/MM/yyyy")</p>
-    <p><strong>Estado:</strong> @(Model.lib_state == 1 ? "Activo" : "Inactivo")</p>
+    <h4></h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @alias["lib_id"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lib_id)
+        </dd>
+
+        <dt>
+            @alias["lib_nom"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lib_nom)
+        </dd>
+        <dt>
+            @alias["aut_nom"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aut_nom)
+        </dd>
+        <dt>
+            @alias["aut_ape"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.aut_ape)
+        </dd>
+
+        <dt>
+            @alias["gen_desc"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gen_desc)
+        </dd>
+        <dt>
+            @alias["lib_edi"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lib_edi)
+        </dd>
+        <dt>
+            @alias["edi_nom"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.edi_nom)
+        </dd>
+        <dt>
+            @alias["lib_disp_stock"]
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lib_disp_stock)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+    </dl>
 </div>
-
 <p>
-    <a href="@Url.Action("Index", "Libro")" class="btn btn-secondary">Volver a la lista</a>
-</p>
+    <a href='@Url.Action("Edit", new { id = Model.lib_id })' class="btn btn-outline-primary " style="width:100px; height:40px;">
+        Editar
+    </a>
+    
+    <br />
 
+    <a href='@Url.Action("Index", "Libro")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+        Regresar
+    </a>
+
+</p>

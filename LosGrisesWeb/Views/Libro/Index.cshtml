@@ -1,46 +1,90 @@
 ﻿@model IEnumerable<LosGrisesWeb.ProxyLibro.LibroDC>
 
 @{
-    ViewBag.Title = "Listado de Libros";
+    ViewBag.Title = "Index";
+    var alias = ViewBag.LibroAlias as Dictionary<string, string>;
 }
 
-<h2>Listado de Libros</h2>
+<h2 class=" mt-5 mb-3">Mantenimiento Libros</h2>
 
 <p>
-    <a href="@Url.Action("Create", "Libro")" class="btn btn-primary">Registrar Nuevo Libro</a>
+    <a href='@Url.Action("Create", new { controller = "Libro", action = "Create" })' class="btn btn-outline-success">
+        <img src="~/Images/Agregar.png" title="Agregar" />  Registrar
+    </a>
 </p>
+<table class="table table-striped table-hover" style="text-align:center">
+    <tr>
+        <th>
+            @alias["lib_id"]
+        </th>
+        <th>
+            @alias["lib_nom"]
+        </th>
+        <th>
+            @alias["aut_nom"]
+        </th>
+        <th>
+            @alias["aut_ape"]
+        </th>
+        <th>
+            @alias["gen_desc"]
+        </th>
+        <th>
+            @alias["lib_edi"]
+        </th>
+        <th>
+            @alias["edi_nom"]
+        </th>
+        <th>
+            @alias["lib_disp_stock"]
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
 
-<table class="table">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.lib_nom)</th>
-            <th>@Html.DisplayNameFor(model => model.aut_id)</th>
-            <th>@Html.DisplayNameFor(model => model.gen_id)</th>
-            <th>@Html.DisplayNameFor(model => model.lib_edi)</th>
-            <th>@Html.DisplayNameFor(model => model.lib_fec_pub)</th>
-            <th>@Html.DisplayNameFor(model => model.lib_disp_stock)</th>
-            <th>@Html.DisplayNameFor(model => model.lib_state)</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@Html.DisplayFor(modelItem => item.lib_nom)</td>
-                <td>@Html.DisplayFor(modelItem => item.aut_id)</td>
-                <td>@Html.DisplayFor(modelItem => item.gen_id)</td>
-                <td>@Html.DisplayFor(modelItem => item.lib_edi)</td>
-                <td>@Html.DisplayFor(modelItem => item.lib_fec_pub)</td>
-                <td>@Html.DisplayFor(modelItem => item.lib_disp_stock)</td>
-                <td>@Html.DisplayFor(modelItem => item.lib_state)</td>
-                <td>
-                    <a href="@Url.Action("Details", "Libro", new { id = item.lib_id })">Detalles</a> |
-                    <a href="@Url.Action("Edit", "Libro", new { id = item.lib_id })">Editar</a> |
-                    <a href="@Url.Action("Delete", "Libro", new { id = item.lib_id })">Eliminar</a>
-                </td>
-            </tr>
-        }
-    </tbody>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.lib_id)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.lib_nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aut_nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.aut_ape)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gen_desc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lib_edi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.edi_nom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lib_disp_stock)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+
+        <td>
+            <a href='@Url.Action("Edit", new { id = item.lib_id })' class="btn btn-outline-primary " style="width:100px; height:40px;">
+                <img src="~/Images/Editar.png" title="Editar" />  Editar
+            </a>
+            <a href='@Url.Action("Details", new { id = item.lib_id })'  class="btn btn-outline-secondary mt-1" style="width:100px; height:40px;">
+                <img src="~/Images/Buscar.png" title="Consultar" />  Detalle
+            </a>
+        </td>
+    </tr>
+}
+
 </table>
-

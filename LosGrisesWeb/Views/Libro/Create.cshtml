@@ -1,4 +1,4 @@
-@model LosGrisesWeb.ProxyLibro.LibroDC
+﻿@model LosGrisesWeb.ProxyLibro.LibroDC
 
 @{
     ViewBag.Title = "Create";
@@ -7,85 +7,140 @@
 
 <h2>Registrar Libro</h2>
 
-@using (Html.BeginForm())
+
+@using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    <h4></h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-horizontal">
-        <h4>Libro</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @alias["lib_nom"]
 
-        <div class="form-group">
-            @alias["lib_nom"]
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.lib_nom, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.lib_nom, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @alias["aut_id"]
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.aut_id, (SelectList)ViewBag.Autores,
-                "Seleccione un Autor", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.aut_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @alias["gen_id"]
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.gen_id, (SelectList)ViewBag.Generos,
-                "Seleccione un Género", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.gen_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @alias["lib_edi"]
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.lib_edi, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.lib_edi, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @alias["lib_fec_pub"]
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.lib_fec_pub, new { @class = "form-control", type = "number" })
-                @Html.ValidationMessageFor(model => model.lib_fec_pub, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @alias["lib_disp_stock"]
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.lib_disp_stock, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.lib_disp_stock, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @alias["edi_id"]
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.edi_id, (SelectList)ViewBag.Editoriales,
-                "Seleccione una Editorial", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.edi_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Registrar" class="btn btn-default" />
-            </div>
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.lib_nom, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.lib_nom, "", new { @class = "text-danger" })
+            <span class="text-danger">
+                @if (ViewData.ModelState["lib_nom"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["lib_nom"].Errors)
+                    {
+                        @Html.Raw($"{alias["lib_nom"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
+    <div class="form-group">
+        @alias["aut_id"]
+ 
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.aut_id, (SelectList)ViewBag.aut_id,
+"Seleccione un Autor", new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(model => model.aut_id, "", new { @class = "text-danger" })
+            <span class="text-danger">
+                @if (ViewData.ModelState["aut_id"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["aut_id"].Errors)
+                    {
+                        @Html.Raw($"{alias["aut_id"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
+
+        </div>
+    </div>
+    <div class="form-group">
+        @alias["gen_id"]
+
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.gen_id, (SelectList)ViewBag.gen_id,
+"Seleccione un Genero", new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(model => model.gen_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @alias["lib_edi"]
+ 
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.lib_edi, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @Html.ValidationMessageFor(model => model.lib_edi, "", new { @class = "text-danger" })
+            <span class="text-danger">
+                @if (ViewData.ModelState["lib_edi"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["lib_edi"].Errors)
+                    {
+                        @Html.Raw($"{alias["lib_edi"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        @alias["lib_fec_pub"]
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.lib_fec_pub, new { htmlAttributes = new { @class = "form-control", required = "required", type = "number" } })
+            @Html.ValidationMessageFor(model => model.lib_fec_pub, "", new { @class = "text-danger" })
+            <span class="text-danger">
+                @if (ViewData.ModelState["lib_fec_pub"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["lib_fec_pub"].Errors)
+                    {
+                        @Html.Raw($"{alias["lib_fec_pub"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        @alias["lib_disp_stock"]
+
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.lib_disp_stock, new { htmlAttributes = new { @class = "form-control", required = "required", type = "number" } })
+            @Html.ValidationMessageFor(model => model.lib_disp_stock, "", new { @class = "text-danger" })
+            <span class="text-danger">
+                @if (ViewData.ModelState["lib_disp_stock"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["lib_disp_stock"].Errors)
+                    {
+                        @Html.Raw($"{alias["lib_disp_stock"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        @alias["edi_id"]
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.edi_id, (SelectList)ViewBag.edi_id,
+"Seleccione una Editorial", new { @class = "form-control", required = "required" })
+            @Html.ValidationMessageFor(model => model.edi_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    @*<div class="form-group">
+        @Html.LabelFor(model => model.lib_user_reg, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.lib_user_reg, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.lib_user_reg, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Registrar" class="btn btn-outline-primary mt-2" style="width:100px; height:40px;"/>
+        </div>
+    </div>
+</div>
 }
 
-<div>
-    @Html.ActionLink("Regresar", "Index")
-</div>
+<a href='@Url.Action("Index", "Libro")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+    Regresar
+</a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
