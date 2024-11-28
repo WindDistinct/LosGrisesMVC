@@ -122,12 +122,32 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Connected Services\ProxyAutor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProxyCliente\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Connected Services\ProxyConsultas\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyEditorial\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyGenero\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyLibro\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -145,6 +165,7 @@
     <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ConsultaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LibroController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -152,8 +173,27 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Connected Services\ProxyAutor\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxyAutor\LosGrisesWeb.ProxyAutor.AutorDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ProxyAutor\service.wsdl" />
+    <None Include="Connected Services\ProxyAutor\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyAutor\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProxyCliente\LosGrisesServices.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyAutor\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyAutor\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyAutor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Connected Services\ProxyCliente\LosGrisesWeb.ProxyCliente.ClienteDC.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -192,8 +232,65 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\ProxyEditorial\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxyEditorial\LosGrisesWeb.ProxyEditorial.EditorialDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ProxyEditorial\service.wsdl" />
+    <None Include="Connected Services\ProxyEditorial\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyEditorial\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyGenero\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxyGenero\LosGrisesWeb.ProxyGenero.GeneroDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ProxyGenero\service.wsdl" />
+    <None Include="Connected Services\ProxyGenero\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyGenero\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyEditorial\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyEditorial\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyEditorial\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyGenero\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyGenero\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyGenero\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyLibro\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\ProxyLibro\LosGrisesWeb.ProxyLibro.LibroDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ProxyLibro\service.wsdl" />
+    <None Include="Connected Services\ProxyLibro\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyLibro\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProxyPersonal\LosGrisesServices.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyLibro\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyLibro\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyLibro\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Connected Services\ProxyPersonal\LosGrisesWeb.ProxyPersonal.PersonalDC.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -309,6 +406,10 @@
     <Content Include="Views\Personal\Details.cshtml" />
     <Content Include="Views\Personal\Edit.cshtml" />
     <Content Include="Views\Personal\Index.cshtml" />
+    <Content Include="Views\Libro\Index.cshtml" />
+    <Content Include="Views\Libro\Details.cshtml" />
+    <Content Include="Views\Libro\Create.cshtml" />
+    <Content Include="Views\Libro\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -345,8 +446,12 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ProxyAutor\" />
     <WCFMetadataStorage Include="Connected Services\ProxyCliente\" />
     <WCFMetadataStorage Include="Connected Services\ProxyConsultas\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyEditorial\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyGenero\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyLibro\" />
     <WCFMetadataStorage Include="Connected Services\ProxyPersonal\" />
     <WCFMetadataStorage Include="Connected Services\ProxyUbigeo\" />
   </ItemGroup>

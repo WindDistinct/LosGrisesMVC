@@ -12,10 +12,10 @@ namespace LosGrisesServices
     public interface IServicioLibro
     {
                 [OperationContract]
-        LibroViewDC ConsultarLibro(Int16 strCodigo);
+        LibroDC ConsultarLibro(Int16 strCodigo);
 
         [OperationContract]
-        List<LibroViewDC> ListarLibro();
+        List<LibroDC> ListarLibro();
 
         [OperationContract]
         Boolean InsertarLibro(LibroDC objLibro);
@@ -37,7 +37,13 @@ namespace LosGrisesServices
         [DataMember]
         public Int16 aut_id { get; set; }
         [DataMember]
+        public String aut_nom { get; set; }
+        [DataMember]
+        public String aut_ape { get; set; }
+        [DataMember]
         public Int16 gen_id { get; set; }
+        [DataMember]
+        public String gen_desc { get; set; }
         [DataMember]
         public String lib_edi { get; set; }
         [DataMember]
@@ -46,6 +52,8 @@ namespace LosGrisesServices
         public Int16 lib_disp_stock { get; set; }
         [DataMember]
         public Int16 edi_id { get; set; }
+        [DataMember]
+        public String edi_nom { get; set; }
         [DataMember]
         public String lib_user_reg { get; set; }
         [DataMember]
@@ -56,6 +64,8 @@ namespace LosGrisesServices
         public DateTime? lib_fec_mod { get; set; }
         [DataMember]
         public Int16 lib_state { get; set; }
+        [DataMember]
+        public String Estado { get; set; }
     }
 
     [DataContract]

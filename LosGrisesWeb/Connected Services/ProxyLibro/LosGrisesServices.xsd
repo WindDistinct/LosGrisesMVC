@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LosGrisesServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LosGrisesServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="LibroDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="aut_ape" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="aut_id" type="xs:short" />
+      <xs:element minOccurs="0" name="aut_nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="edi_id" type="xs:short" />
+      <xs:element minOccurs="0" name="edi_nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gen_desc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="gen_id" type="xs:short" />
+      <xs:element minOccurs="0" name="lib_disp_stock" type="xs:short" />
+      <xs:element minOccurs="0" name="lib_edi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lib_fec_mod" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lib_fec_pub" type="xs:short" />
+      <xs:element minOccurs="0" name="lib_fec_reg" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="lib_id" type="xs:short" />
+      <xs:element minOccurs="0" name="lib_nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lib_state" type="xs:short" />
+      <xs:element minOccurs="0" name="lib_user_mod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="lib_user_reg" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LibroDC" nillable="true" type="tns:LibroDC" />
+  <xs:complexType name="ArrayOfLibroDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="LibroDC" nillable="true" type="tns:LibroDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfLibroDC" nillable="true" type="tns:ArrayOfLibroDC" />
+</xs:schema>
