@@ -51,16 +51,34 @@
         @*@Html.LabelFor(model => model.cli_nom, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_nom"]
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cli_nom, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cli_nom, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.cli_nom, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @*@Html.ValidationMessageFor(model => model.cli_nom, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_nom"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_nom"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_nom"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
     <div class="form-group">
         @*@Html.LabelFor(model => model.cli_ape, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_ape"]
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cli_ape, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cli_ape, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.cli_ape, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @*@Html.ValidationMessageFor(model => model.cli_ape, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_ape"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_ape"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_ape"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
@@ -68,8 +86,17 @@
         @*@Html.LabelFor(model => model.cli_dir, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_dir"]
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cli_dir, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cli_dir, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.cli_dir, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @*@Html.ValidationMessageFor(model => model.cli_dir, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_dir"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_dir"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_dir"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
@@ -77,8 +104,17 @@
         @*@Html.LabelFor(model => model.cli_dni, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_dni"]
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cli_dni, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cli_dni, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.cli_dni, new { htmlAttributes = new { @class = "form-control", maxlength = "8", minlength = "8", required = "required" } })
+            @*@Html.ValidationMessageFor(model => model.cli_dni, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_dni"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_dni"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_dni"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
@@ -94,8 +130,17 @@
         @*@Html.LabelFor(model => model.cli_fec_nac, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_fec_nac"]
         <div class="col-md-10">
-            @Html.TextBoxFor(model => model.cli_fec_nac_serializado, new { @class = "form-control", type = "date" })
-            @Html.ValidationMessageFor(model => model.cli_fec_nac_serializado, "", new { @class = "text-danger" })
+            @Html.TextBoxFor(model => model.cli_fec_nac_serializado, new { @class = "form-control", type = "date", required = "required" })
+            @*@Html.ValidationMessageFor(model => model.cli_fec_nac_serializado, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_fec_nac_serializado"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_fec_nac_serializado"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_fec_nac"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
@@ -119,8 +164,17 @@
         @*@Html.LabelFor(model => model.cli_mail, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_mail"]
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cli_mail, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cli_mail, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.cli_mail, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @*@Html.ValidationMessageFor(model => model.cli_mail, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_mail"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_mail"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_mail"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
@@ -130,8 +184,17 @@
         @*@Html.LabelFor(model => model.cli_sex, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_sex"]
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cli_sex, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cli_sex, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.cli_sex, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @*@Html.ValidationMessageFor(model => model.cli_sex, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_sex"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_sex"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_sex"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
@@ -147,8 +210,17 @@
         @*@Html.LabelFor(model => model.cli_tel, htmlAttributes: new { @class = "control-label col-md-2" })*@
         @alias["cli_tel"]
         <div class="col-md-10">
-            @Html.EditorFor(model => model.cli_tel, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.cli_tel, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.cli_tel, new { htmlAttributes = new { @class = "form-control", required = "required" } })
+            @*@Html.ValidationMessageFor(model => model.cli_tel, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["cli_tel"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["cli_tel"].Errors)
+                    {
+                        @Html.Raw($"{alias["cli_tel"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
@@ -173,20 +245,29 @@
         @alias["ubg_id"]
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.ubg_id, (SelectList)ViewBag.UbgId,
-        "Seleccione un Ubigeo", new { @class = "form-control" })
-            @Html.ValidationMessageFor(model => model.ubg_id, "", new { @class = "text-danger" })
+        "Seleccione un Ubigeo", new { @class = "form-control", required = "required" })
+            @*@Html.ValidationMessageFor(model => model.ubg_id, "", new { @class = "text-danger" })*@
+            <span class="text-danger">
+                @if (ViewData.ModelState["ubg_id"]?.Errors.Count > 0)
+                {
+                    foreach (var error in ViewData.ModelState["ubg_id"].Errors)
+                    {
+                        @Html.Raw($"{alias["ubg_id"]} {error.ErrorMessage}")
+                    }
+                }
+            </span>
         </div>
     </div>
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Registrar" class="btn btn-default" />
+            <input type="submit" value="Registrar" class="btn btn-outline-primary mt-2" />
         </div>
     </div>
 </div>
 }
 
-<div>
+<div class="btn btn-outline-warning mt-2">
     @Html.ActionLink("Regresar", "Index")
 </div>
 
