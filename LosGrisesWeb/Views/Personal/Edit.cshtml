@@ -75,13 +75,15 @@
     <div class="form-group">
         @alias["per_state"]
         <div class="col-md-10">
-            @Html.DropDownList("EstadoPersonal", null, htmlAttributes: new { @class = "form-control" })
+            @Html.DropDownListFor(model => model.per_state, new SelectList(ViewBag.EstadoPersonal, "Value", "Text"), htmlAttributes: new { @class = "form-control", required = "required" })
         </div>
     </div>
 
     <div class="form-group">
-        <input type="submit" value="Guardar Cambios" class="btn btn-primary" />
-        <a href="@Url.Action("Index", "Personal")" class="btn btn-secondary">Cancelar</a>
+        <input type="submit" value="Guardar" class="btn btn-outline-primary mt-2" style="width:100px; height:40px;" />
+        <a href='@Url.Action("Index", "Personal")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+            Regresar
+        </a>
     </div>
 }
 

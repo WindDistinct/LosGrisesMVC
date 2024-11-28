@@ -79,9 +79,9 @@ namespace LosGrisesWeb.Controllers
             var editoriales = servicioEditorial.ObtenerEditoriales();
             var autores = servicioAutor.ObtenerAutores();
             var generos = servicioGenero.ObtenerGeneros();
-            ViewBag.aut_id = new SelectList(autores, "AutorId", "AutorNombreApellidos");
-            ViewBag.edi_id = new SelectList(editoriales, "EditorialId", "EditorialNombre");
-            ViewBag.gen_id = new SelectList(generos, "GeneroId", "GeneroNombre");
+            ViewBag.autId = new SelectList(autores, "AutorId", "AutorNombreApellidos");
+            ViewBag.ediId = new SelectList(editoriales, "EditorialId", "EditorialNombre");
+            ViewBag.genId = new SelectList(generos, "GeneroId", "GeneroNombre");
 
             return View();
         }
