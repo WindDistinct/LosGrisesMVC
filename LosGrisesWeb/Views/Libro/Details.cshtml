@@ -1,0 +1,24 @@
+﻿@model LosGrisesWeb.ProxyLibro.LibroDC
+
+@{
+    ViewBag.Title = "Detalles del Libro";
+}
+
+<h2>Detalles del Libro</h2>
+
+<div>
+    <h4>@Model.lib_nom</h4>
+    <p><strong>Autor:</strong> @Model.aut_id</p>
+    <p><strong>Género:</strong> @Model.gen_id</p>
+    <p><strong>Editorial:</strong> @Model.lib_edi</p>
+    <p><strong>Fecha de Publicación:</strong> @Model.lib_fec_pub</p>
+    <p><strong>Stock Disponible:</strong> @Model.lib_disp_stock</p>
+    <p><strong>Editorial ID:</strong> @Model.edi_id</p>
+    <p><strong>Fecha de Registro:</strong> @Model.lib_fec_reg?.ToString("dd/MM/yyyy")</p>
+    <p><strong>Estado:</strong> @(Model.lib_state == 1 ? "Activo" : "Inactivo")</p>
+</div>
+
+<p>
+    <a href="@Url.Action("Index", "Libro")" class="btn btn-secondary">Volver a la lista</a>
+</p>
+
