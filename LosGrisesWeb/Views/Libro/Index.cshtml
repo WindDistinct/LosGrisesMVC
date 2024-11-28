@@ -1,0 +1,46 @@
+﻿@model IEnumerable<LosGrisesWeb.ProxyLibro.LibroDC>
+
+@{
+    ViewBag.Title = "Listado de Libros";
+}
+
+<h2>Listado de Libros</h2>
+
+<p>
+    <a href="@Url.Action("Create", "Libro")" class="btn btn-primary">Registrar Nuevo Libro</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.lib_nom)</th>
+            <th>@Html.DisplayNameFor(model => model.aut_id)</th>
+            <th>@Html.DisplayNameFor(model => model.gen_id)</th>
+            <th>@Html.DisplayNameFor(model => model.lib_edi)</th>
+            <th>@Html.DisplayNameFor(model => model.lib_fec_pub)</th>
+            <th>@Html.DisplayNameFor(model => model.lib_disp_stock)</th>
+            <th>@Html.DisplayNameFor(model => model.lib_state)</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.lib_nom)</td>
+                <td>@Html.DisplayFor(modelItem => item.aut_id)</td>
+                <td>@Html.DisplayFor(modelItem => item.gen_id)</td>
+                <td>@Html.DisplayFor(modelItem => item.lib_edi)</td>
+                <td>@Html.DisplayFor(modelItem => item.lib_fec_pub)</td>
+                <td>@Html.DisplayFor(modelItem => item.lib_disp_stock)</td>
+                <td>@Html.DisplayFor(modelItem => item.lib_state)</td>
+                <td>
+                    <a href="@Url.Action("Details", "Libro", new { id = item.lib_id })">Detalles</a> |
+                    <a href="@Url.Action("Edit", "Libro", new { id = item.lib_id })">Editar</a> |
+                    <a href="@Url.Action("Delete", "Libro", new { id = item.lib_id })">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

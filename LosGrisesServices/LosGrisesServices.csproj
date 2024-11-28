@@ -84,9 +84,6 @@
     <Compile Include="tb_Autor.cs">
       <DependentUpon>Libreria.tt</DependentUpon>
     </Compile>
-    <Compile Include="tb_Autor_aud.cs">
-      <DependentUpon>Libreria.tt</DependentUpon>
-    </Compile>
     <Compile Include="tb_Cliente.cs">
       <DependentUpon>Libreria.tt</DependentUpon>
     </Compile>

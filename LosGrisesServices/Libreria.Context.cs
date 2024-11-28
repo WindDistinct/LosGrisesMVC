@@ -39,7 +39,6 @@ namespace LosGrisesServices
         public virtual DbSet<tb_Requerimiento> tb_Requerimiento { get; set; }
         public virtual DbSet<tb_Requerimiento_detalle> tb_Requerimiento_detalle { get; set; }
         public virtual DbSet<tb_Ubigeo> tb_Ubigeo { get; set; }
-        public virtual DbSet<tb_Autor_aud> tb_Autor_aud { get; set; }
         public virtual DbSet<vw_VistaAutor> vw_VistaAutor { get; set; }
         public virtual DbSet<vw_VistaClientes> vw_VistaClientes { get; set; }
         public virtual DbSet<vw_VistaLibro> vw_VistaLibro { get; set; }
