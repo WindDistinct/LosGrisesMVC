@@ -33,29 +33,6 @@
           <Property Name="aut_fec_mod" Type="datetime" />
           <Property Name="aut_state" Type="bit" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'dbLibreria.dbo.tb_Autor_aud' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
-        <EntityType Name="tb_Autor_aud">
-          <Key>
-            <PropertyRef Name="aut_id" />
-            <PropertyRef Name="aut_user_reg" />
-            <PropertyRef Name="aut_fec_reg" />
-            <PropertyRef Name="aut_state" />
-          </Key>
-          <Property Name="aut_id" Type="int" Nullable="false" />
-          <Property Name="aut_nom" Type="varchar" MaxLength="15" />
-          <Property Name="aut_ape_pat" Type="varchar" MaxLength="20" />
-          <Property Name="aut_ape_mat" Type="varchar" MaxLength="20" />
-          <Property Name="aut_foto" Type="varbinary(max)" />
-          <Property Name="aut_pais" Type="varchar" MaxLength="15" />
-          <Property Name="aut_user_reg" Type="varchar" MaxLength="36" Nullable="false" />
-          <Property Name="aut_fec_reg" Type="datetime" Nullable="false" />
-          <Property Name="aut_user_mod" Type="varchar" MaxLength="36" />
-          <Property Name="aut_fec_mod" Type="datetime" />
-          <Property Name="aut_state" Type="bit" Nullable="false" />
-          <Property Name="aut_aud_accion" Type="varchar" MaxLength="15" />
-          <Property Name="aut_aud_fec_accion" Type="datetime" />
-        </EntityType>
         <EntityType Name="tb_Cliente">
           <Key>
             <PropertyRef Name="cli_id" />
@@ -341,18 +318,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
           <Property Name="lib_nom" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="rent_obs" Type="varchar" MaxLength="50" />
         </EntityType>
-        <Association Name="FK_Auditoria_Autor">
-          <End Role="tb_Autor" Type="Self.tb_Autor" Multiplicity="1" />
-          <End Role="tb_Autor_aud" Type="Self.tb_Autor_aud" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Autor">
-              <PropertyRef Name="aut_id" />
-            </Principal>
-            <Dependent Role="tb_Autor_aud">
-              <PropertyRef Name="aut_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Ejemplar_Almacen">
           <End Role="tb_Almacen" Type="Self.tb_Almacen" Multiplicity="0..1" />
           <End Role="tb_Ejemplar" Type="Self.tb_Ejemplar" Multiplicity="*" />
@@ -671,23 +636,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
           <EntitySet Name="tb_Requerimiento" EntityType="Self.tb_Requerimiento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Requerimiento_detalle" EntityType="Self.tb_Requerimiento_detalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="tb_Ubigeo" EntityType="Self.tb_Ubigeo" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="tb_Autor_aud" EntityType="Self.tb_Autor_aud" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [tb_Autor_aud].[aut_id] AS [aut_id], 
-    [tb_Autor_aud].[aut_nom] AS [aut_nom], 
-    [tb_Autor_aud].[aut_ape_pat] AS [aut_ape_pat], 
-    [tb_Autor_aud].[aut_ape_mat] AS [aut_ape_mat], 
-    [tb_Autor_aud].[aut_foto] AS [aut_foto], 
-    [tb_Autor_aud].[aut_pais] AS [aut_pais], 
-    [tb_Autor_aud].[aut_user_reg] AS [aut_user_reg], 
-    [tb_Autor_aud].[aut_fec_reg] AS [aut_fec_reg], 
-    [tb_Autor_aud].[aut_user_mod] AS [aut_user_mod], 
-    [tb_Autor_aud].[aut_fec_mod] AS [aut_fec_mod], 
-    [tb_Autor_aud].[aut_state] AS [aut_state], 
-    [tb_Autor_aud].[aut_aud_accion] AS [aut_aud_accion], 
-    [tb_Autor_aud].[aut_aud_fec_accion] AS [aut_aud_fec_accion]
-    FROM [dbo].[tb_Autor_aud] AS [tb_Autor_aud]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="vw_VistaAutor" EntityType="Self.vw_VistaAutor" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [vw_VistaAutor].[aut_id] AS [aut_id], 
@@ -776,10 +724,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
     [vw_VistaRentas].[rent_obs] AS [rent_obs]
     FROM [dbo].[vw_VistaRentas] AS [vw_VistaRentas]</DefiningQuery>
           </EntitySet>
-          <AssociationSet Name="FK_Auditoria_Autor" Association="Self.FK_Auditoria_Autor">
-            <End Role="tb_Autor" EntitySet="tb_Autor" />
-            <End Role="tb_Autor_aud" EntitySet="tb_Autor_aud" />
-          </AssociationSet>
           <AssociationSet Name="FK_Ejemplar_Almacen" Association="Self.FK_Ejemplar_Almacen">
             <End Role="tb_Almacen" EntitySet="tb_Almacen" />
             <End Role="tb_Ejemplar" EntitySet="tb_Ejemplar" />
@@ -866,7 +810,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
           <Property Name="aut_user_mod" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
           <Property Name="aut_fec_mod" Type="DateTime" Precision="3" />
           <Property Name="aut_state" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="tb_Autor_aud" Relationship="Self.FK_Auditoria_Autor" FromRole="tb_Autor" ToRole="tb_Autor_aud" />
           <NavigationProperty Name="tb_Libro" Relationship="Self.FK_Libro_Autor" FromRole="tb_Autor" ToRole="tb_Libro" />
         </EntityType>
         <EntityType Name="tb_Cliente">
@@ -1054,28 +997,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
           <NavigationProperty Name="tb_Editorial" Relationship="Self.FK_tb_Editorial_tb_Ubigeo" FromRole="tb_Ubigeo" ToRole="tb_Editorial" />
           <NavigationProperty Name="tb_Personal" Relationship="Self.FK_tb_Personal_tb_Ubigeo" FromRole="tb_Ubigeo" ToRole="tb_Personal" />
         </EntityType>
-        <EntityType Name="tb_Autor_aud">
-          <Key>
-            <PropertyRef Name="aut_id" />
-            <PropertyRef Name="aut_user_reg" />
-            <PropertyRef Name="aut_fec_reg" />
-            <PropertyRef Name="aut_state" />
-          </Key>
-          <Property Name="aut_id" Type="Int32" Nullable="false" />
-          <Property Name="aut_nom" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="aut_ape_pat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="aut_ape_mat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="aut_foto" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="aut_pais" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="aut_user_reg" Type="String" MaxLength="36" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="aut_fec_reg" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="aut_user_mod" Type="String" MaxLength="36" FixedLength="false" Unicode="false" />
-          <Property Name="aut_fec_mod" Type="DateTime" Precision="3" />
-          <Property Name="aut_state" Type="Boolean" Nullable="false" />
-          <Property Name="aut_aud_accion" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
-          <Property Name="aut_aud_fec_accion" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tb_Autor" Relationship="Self.FK_Auditoria_Autor" FromRole="tb_Autor_aud" ToRole="tb_Autor" />
-        </EntityType>
         <EntityType Name="vw_VistaAutor">
           <Key>
             <PropertyRef Name="aut_id" />
@@ -1199,18 +1120,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
             </Principal>
             <Dependent Role="tb_Ejemplar">
               <PropertyRef Name="alm_id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Auditoria_Autor">
-          <End Role="tb_Autor" Type="Self.tb_Autor" Multiplicity="1" />
-          <End Role="tb_Autor_aud" Type="Self.tb_Autor_aud" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tb_Autor">
-              <PropertyRef Name="aut_id" />
-            </Principal>
-            <Dependent Role="tb_Autor_aud">
-              <PropertyRef Name="aut_id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -1371,7 +1280,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
           <EntitySet Name="tb_Requerimiento" EntityType="Self.tb_Requerimiento" />
           <EntitySet Name="tb_Requerimiento_detalle" EntityType="Self.tb_Requerimiento_detalle" />
           <EntitySet Name="tb_Ubigeo" EntityType="Self.tb_Ubigeo" />
-          <EntitySet Name="tb_Autor_aud" EntityType="Self.tb_Autor_aud" />
           <EntitySet Name="vw_VistaAutor" EntityType="Self.vw_VistaAutor" />
           <EntitySet Name="vw_VistaClientes" EntityType="Self.vw_VistaClientes" />
           <EntitySet Name="vw_VistaLibro" EntityType="Self.vw_VistaLibro" />
@@ -1380,10 +1288,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
           <AssociationSet Name="FK_Ejemplar_Almacen" Association="Self.FK_Ejemplar_Almacen">
             <End Role="tb_Almacen" EntitySet="tb_Almacen" />
             <End Role="tb_Ejemplar" EntitySet="tb_Ejemplar" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Auditoria_Autor" Association="Self.FK_Auditoria_Autor">
-            <End Role="tb_Autor" EntitySet="tb_Autor" />
-            <End Role="tb_Autor_aud" EntitySet="tb_Autor_aud" />
           </AssociationSet>
           <AssociationSet Name="FK_Libro_Autor" Association="Self.FK_Libro_Autor">
             <End Role="tb_Autor" EntitySet="tb_Autor" />
@@ -1967,25 +1871,6 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
                 <ScalarProperty Name="ubg_user_mod" ColumnName="ubg_user_mod" />
                 <ScalarProperty Name="ubg_fec_mod" ColumnName="ubg_fec_mod" />
                 <ScalarProperty Name="ubg_state" ColumnName="ubg_state" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tb_Autor_aud">
-            <EntityTypeMapping TypeName="dbLibreriaModel.tb_Autor_aud">
-              <MappingFragment StoreEntitySet="tb_Autor_aud">
-                <ScalarProperty Name="aut_id" ColumnName="aut_id" />
-                <ScalarProperty Name="aut_nom" ColumnName="aut_nom" />
-                <ScalarProperty Name="aut_ape_pat" ColumnName="aut_ape_pat" />
-                <ScalarProperty Name="aut_ape_mat" ColumnName="aut_ape_mat" />
-                <ScalarProperty Name="aut_foto" ColumnName="aut_foto" />
-                <ScalarProperty Name="aut_pais" ColumnName="aut_pais" />
-                <ScalarProperty Name="aut_user_reg" ColumnName="aut_user_reg" />
-                <ScalarProperty Name="aut_fec_reg" ColumnName="aut_fec_reg" />
-                <ScalarProperty Name="aut_user_mod" ColumnName="aut_user_mod" />
-                <ScalarProperty Name="aut_fec_mod" ColumnName="aut_fec_mod" />
-                <ScalarProperty Name="aut_state" ColumnName="aut_state" />
-                <ScalarProperty Name="aut_aud_accion" ColumnName="aut_aud_accion" />
-                <ScalarProperty Name="aut_aud_fec_accion" ColumnName="aut_aud_fec_accion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
