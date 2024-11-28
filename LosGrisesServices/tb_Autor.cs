@@ -17,7 +17,6 @@ namespace LosGrisesServices
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public tb_Autor()
         {
-            this.tb_Autor_aud = new HashSet<tb_Autor_aud>();
             this.tb_Libro = new HashSet<tb_Libro>();
         }
     
@@ -32,8 +31,6 @@ namespace LosGrisesServices
         public Nullable<System.DateTime> aut_fec_mod { get; set; }
         public bool aut_state { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<tb_Autor_aud> tb_Autor_aud { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<tb_Libro> tb_Libro { get; set; }
     }

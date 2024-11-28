@@ -11,117 +11,80 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.per_id, "Id")
+            @Html.TextBoxFor(model => model.per_id, new { @class = "form-control" })
+        </div>*@
 
+    <div class="form-group">
+        @alias["per_nom"]
+        @Html.TextBoxFor(model => model.per_nom, new { @class = "form-control" })
+    </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_nom"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_nom, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.per_nom, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="form-group">
+        @alias["per_ape_pat"]
+        @Html.TextBoxFor(model => model.per_ape_pat, new { @class = "form-control" })
+    </div>
 
+    <div class="form-group">
+        @alias["per_ape_mat"]
+        @Html.TextBoxFor(model => model.per_ape_mat, new { @class = "form-control" })
+    </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_ape_pat"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_ape_pat, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.per_ape_pat, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="form-group">
+        @alias["per_dni"]
+        @Html.TextBoxFor(model => model.per_dni, new { @class = "form-control" })
+    </div>
 
+    <div class="form-group">
+        @alias["per_tel"]
+        @Html.TextBoxFor(model => model.per_tel, new { @class = "form-control", type = "tel" })
+    </div>
 
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_ape_mat"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_ape_mat, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.per_ape_mat, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_dni"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_dni, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.per_dni, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_tel"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_tel, new { @class = "form-control", type = "tel" })
-                @Html.ValidationMessageFor(model => model.per_tel, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_mail"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_mail, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.per_mail, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["ubg_id"]</label>
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.ubg_id, (SelectList)ViewBag.UbgId, "Seleccione un Ubigeo", new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ubg_id, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_dir"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_dir, new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.per_dir, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_fec_ing"]</label>
-            <div class="col-md-10">
-                @Html.TextBoxFor(model => model.per_fec_ing, new { @class = "form-control", type = "date" })
-                @Html.ValidationMessageFor(model => model.per_fec_ing, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2">@alias["per_state"]</label>
-            <div class="col-md-10">
-                @Html.DropDownListFor(model => model.per_state,
-                    new SelectList(new List<string> { "Activo", "Inactivo" }),
-                    "Seleccione Estado",
-                    new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.per_state, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <label class="control-label col-md-2" for="per_foto">@alias["per_foto"]</label>
-            <div class="col-md-10">
-                <input type="file" name="per_foto" class="form-control" />
-                @Html.ValidationMessageFor(model => model.per_foto, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Crear" class="btn btn-primary" />
-                <a href="@Url.Action("Index", "Personal")" class="btn btn-secondary">Cancelar</a>
-            </div>
+    <div class="form-group">
+        @alias["per_mail"]
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.per_mail, new { htmlAttributes = new { @class = "form-control" } })
         </div>
     </div>
+
+    <div class="form-group">
+        @alias["per_pass"]
+        <div class="col-md-10">
+            @Html.PasswordFor(model => model.per_pass, new { @class = "form-control" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @alias["ubg_id"]
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ubg_id, (SelectList)ViewBag.ubgId,
+                           "Seleccione un Ubigeo", new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ubg_id, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @alias["per_dir"]
+        @Html.TextBoxFor(model => model.per_dir, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @alias["per_fec_ing"]
+        @Html.TextBoxFor(model => model.per_fec_ing, new { @class = "form-control", type = "date" })
+    </div>
+
+    @*<div class="form-group">
+            @Html.LabelFor(model => model.per_user_mod)
+            @Html.TextBoxFor(model => model.per_user_mod, new { @class = "form-control" })
+        </div>*@
+
+    <div class="form-group">
+        <input type="submit" value="Crear" class="btn btn-primary" />
+        <a href="@Url.Action("Index", "Personal")" class="btn btn-secondary">Cancelar</a>
+    </div>
+}
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
 }

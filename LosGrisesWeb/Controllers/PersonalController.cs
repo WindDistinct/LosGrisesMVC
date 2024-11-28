@@ -96,15 +96,27 @@ namespace LosGrisesWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PersonalDC personal)
         {
-            if (ModelState.IsValid)
+            /* if (ModelState.IsValid)
+             {
+                 personal.per_user_reg = "admin";
+                 personal.per_fec_reg = DateTime.Now;
+                 servicioPersonal.InsertarPersonal(personal);
+                 return RedirectToAction("Index");
+             }
+
+             return View(personal);*/
+
+            try
             {
                 personal.per_user_reg = "admin";
                 personal.per_fec_reg = DateTime.Now;
                 servicioPersonal.InsertarPersonal(personal);
                 return RedirectToAction("Index");
             }
-
-            return View(personal);
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
 
         // GET: Personal/Edit/5
@@ -141,7 +153,7 @@ namespace LosGrisesWeb.Controllers
 
             var ubigeos = servicioUbigeo.ObtenerUbigeos();
             ViewBag.ubgId = new SelectList(ubigeos, "UbigeoId", "UbigeoDesc", personal.ubg_id);
-
+            ViewBag.EstadoPersonal = ObtenerEstados(personal.per_state);
             return View(personal);
         }
 
@@ -150,7 +162,7 @@ namespace LosGrisesWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(PersonalDC personal)
         {
-            if (ModelState.IsValid)
+            /*if (ModelState.IsValid)
             {
                 personal.per_user_mod = "admin";
                 personal.per_fec_mod = DateTime.Now;
@@ -166,7 +178,29 @@ namespace LosGrisesWeb.Controllers
                 }
             }
 
-            return View(personal);
+            return View(personal);*/
+            try
+            {
+                personal.per_user_mod = "admin";
+                personal.per_fec_mod = DateTime.Now;
+                servicioPersonal.ActualizarPersonal(personal);
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public List<SelectListItem> ObtenerEstados(int Estado)
+        {
+            List<SelectListItem> items = new List<SelectListItem>();
+
+            items.Add(new SelectListItem { Text = "Inactivo", Value = "0" });
+            items.Add(new SelectListItem { Text = "Activo", Value = "1" });
+
+            items[Estado].Selected = true;
+            return items;
         }
     }
 }

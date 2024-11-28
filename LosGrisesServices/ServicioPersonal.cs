@@ -141,7 +141,7 @@ namespace LosGrisesServices
             catch (EntityException ex)
             {
                 var detailedMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
-                throw new Exception($"Error al insertar el libro: {detailedMessage}");
+                throw new Exception($"Error al insertar el personal: {detailedMessage}");
             }
         }
 
@@ -176,7 +176,8 @@ namespace LosGrisesServices
             }
             catch (EntityException ex)
             {
-                throw new Exception(ex.Message);
+                var detailedMessage = ex.InnerException != null ? ex.InnerException.Message : ex.Message;
+                throw new Exception($"Error al insertar el personal: {detailedMessage}");
             }
         }
 
