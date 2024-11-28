@@ -111,7 +111,7 @@
     <div class="col-md-10">
         @*@Html.EditorFor(model => model.cli_state, new { htmlAttributes = new { @class = "form-control" } })
         @Html.ValidationMessageFor(model => model.cli_state, "", new { @class = "text-danger" })*@
-        @Html.DropDownList("EstadoCliente", null, htmlAttributes: new { @class = "form-control", required = "required" })
+        @Html.DropDownListFor(model => model.cli_state, new SelectList(ViewBag.EstadoCliente, "Value", "Text"), htmlAttributes: new { @class = "form-control", required = "required" })
         @Html.ValidationMessageFor(model => model.cli_state, "", new { @class = "text-danger" })
     </div>
 </div>
