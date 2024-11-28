@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="dbLibreriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="dbLibreriaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="tb_Almacen">
           <Key>
             <PropertyRef Name="alm_id" />
@@ -833,8 +833,7 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
             <End Role="tb_Personal" EntitySet="tb_Personal" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbLibreriaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1434,16 +1433,16 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
             <End Role="tb_Requerimiento_detalle" EntitySet="tb_Requerimiento_detalle" />
           </AssociationSet>
           <FunctionImport Name="usp_ConsultarAutor" ReturnType="Collection(dbLibreriaModel.usp_ConsultarAutor_Result)">
-            <Parameter Name="aut_id" Mode="In" Type="Int32" />
+          <Parameter Name="aut_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarCliente" ReturnType="Collection(dbLibreriaModel.usp_ConsultarCliente_Result)">
-            <Parameter Name="cli_id" Mode="In" Type="Int32" />
+          <Parameter Name="cli_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarEjemplaresDisponibles" ReturnType="Collection(dbLibreriaModel.usp_ConsultarEjemplaresDisponibles_Result)">
-            <Parameter Name="LibroNom" Mode="In" Type="String" />
+          <Parameter Name="LibroNom" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_ConsultarLibro" ReturnType="Collection(dbLibreriaModel.usp_ConsultarLibro_Result)">
-            <Parameter Name="lib_id" Mode="In" Type="Int32" />
+          <Parameter Name="lib_id" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_EditarAutor">
             <Parameter Name="aut_id" Mode="In" Type="Int32" />
@@ -1575,7 +1574,7 @@ advertencia 6002: La tabla o vista 'dbLibreria.dbo.vw_VistaRentas' no tiene defi
             <Parameter Name="IdProvincia" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_Ubigeo_ProvinciasRegion" ReturnType="Collection(dbLibreriaModel.usp_Ubigeo_ProvinciasRegion_Result)">
-            <Parameter Name="IdRegion" Mode="In" Type="String" />
+          <Parameter Name="IdRegion" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="usp_Ubigeo_Region" ReturnType="Collection(dbLibreriaModel.usp_Ubigeo_Region_Result)" />
           <FunctionImport Name="usp_ValidarUsuario" ReturnType="Collection(dbLibreriaModel.usp_ValidarUsuario_Result)">
