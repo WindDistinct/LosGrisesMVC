@@ -20,7 +20,7 @@ namespace LosGrisesServices
     public class GeneroDC
     {
         [DataMember]
-        public String GeneroId { get; set; }
+        public Int16 GeneroId { get; set; }
         [DataMember]
         public String GeneroNombre { get; set; }
     }

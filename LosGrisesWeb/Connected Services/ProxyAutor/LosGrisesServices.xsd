@@ -8,7 +8,7 @@
   <xs:element name="ArrayOfAutorDC" nillable="true" type="tns:ArrayOfAutorDC" />
   <xs:complexType name="AutorDC">
     <xs:sequence>
-      <xs:element minOccurs="0" name="AutorId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="AutorId" type="xs:int" />
       <xs:element minOccurs="0" name="AutorNombreApellidos" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

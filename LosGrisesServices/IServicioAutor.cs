@@ -20,7 +20,7 @@ namespace LosGrisesServices
     public class AutorDC
     {
         [DataMember]
-        public String AutorId { get; set; }
+        public int AutorId { get; set; }
         [DataMember]
         public String AutorNombreApellidos { get; set; }
     }

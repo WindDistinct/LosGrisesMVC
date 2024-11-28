@@ -23,7 +23,7 @@ namespace LosGrisesWeb.ProxyEditorial {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string EditorialIdField;
+        private short EditorialIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string EditorialNombreField;
@@ -39,12 +39,12 @@ namespace LosGrisesWeb.ProxyEditorial {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string EditorialId {
+        public short EditorialId {
             get {
                 return this.EditorialIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.EditorialIdField, value) != true)) {
+                if ((this.EditorialIdField.Equals(value) != true)) {
                     this.EditorialIdField = value;
                     this.RaisePropertyChanged("EditorialId");
                 }

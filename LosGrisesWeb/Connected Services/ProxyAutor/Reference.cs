@@ -23,7 +23,7 @@ namespace LosGrisesWeb.ProxyAutor {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string AutorIdField;
+        private int AutorIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string AutorNombreApellidosField;
@@ -39,12 +39,12 @@ namespace LosGrisesWeb.ProxyAutor {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string AutorId {
+        public int AutorId {
             get {
                 return this.AutorIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.AutorIdField, value) != true)) {
+                if ((this.AutorIdField.Equals(value) != true)) {
                     this.AutorIdField = value;
                     this.RaisePropertyChanged("AutorId");
                 }

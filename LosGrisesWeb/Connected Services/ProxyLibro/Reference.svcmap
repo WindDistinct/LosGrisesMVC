@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="a6645274-5bcd-4110-aac0-ef20f0ea139e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="65a0e202-4940-46fb-a63b-e710f0e59fc1" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,10 +22,10 @@
     <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" Protocol="mex" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8a696309-7a70-4206-b97c-fe7ace73df72" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
-    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="17e5c5af-422c-4321-b109-d021be42a15c" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
-    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="fd016dd9-535a-447f-bcef-677a95c35bef" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
-    <MetadataFile FileName="LosGrisesServices.xsd" MetadataType="Schema" ID="6e43e4b1-4985-4300-a570-26f9108a071d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="8c93be4a-0c9f-4ac3-9cea-122a97550758" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="b1839034-56f6-48b9-99f2-f7b61f7c802d" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="68636805-b6f3-41e9-a814-8268b7578a0f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
+    <MetadataFile FileName="LosGrisesServices.xsd" MetadataType="Schema" ID="b3d466c0-a398-438e-afb9-c378932334b9" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioLibro/mex" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

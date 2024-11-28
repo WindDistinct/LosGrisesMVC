@@ -20,7 +20,7 @@ namespace LosGrisesServices
     public class EditorialDC
     {
         [DataMember]
-        public String EditorialId { get; set; }
+        public Int16 EditorialId { get; set; }
         [DataMember]
         public String EditorialNombre { get; set; }
 

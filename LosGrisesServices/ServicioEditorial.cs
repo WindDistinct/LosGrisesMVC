@@ -28,7 +28,7 @@ namespace LosGrisesServices
                 {
                     EditorialDC objEditorial = new EditorialDC();
 
-                    objEditorial.EditorialId = Convert.ToString(resultado.edi_id);
+                    objEditorial.EditorialId = (short)resultado.edi_id;
                     objEditorial.EditorialNombre = resultado.edi_nom;
 
                     objLista.Add(objEditorial);

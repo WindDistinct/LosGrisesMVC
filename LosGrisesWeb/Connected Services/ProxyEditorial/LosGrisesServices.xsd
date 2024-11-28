@@ -8,7 +8,7 @@
   <xs:element name="ArrayOfEditorialDC" nillable="true" type="tns:ArrayOfEditorialDC" />
   <xs:complexType name="EditorialDC">
     <xs:sequence>
-      <xs:element minOccurs="0" name="EditorialId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EditorialId" type="xs:short" />
       <xs:element minOccurs="0" name="EditorialNombre" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

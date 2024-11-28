@@ -4,10 +4,10 @@
     ViewBag.Title = "Detalles del Personal";
 }
 
-<h2>Detalles del Personal</h2>
+<h2 class="mb-4">Datos del personal</h2>
 
 <div>
-    <h4>@Model.per_nom @Model.per_ape_pat</h4>
+    <h4 class="mt-2 mb-3">@Model.per_nom @Model.per_ape_pat</h4>
     <p><strong>DNI:</strong> @Model.per_dni</p>
     <p><strong>Teléfono:</strong> @Model.per_tel</p>
     <p><strong>Email:</strong> @Model.per_mail</p>
@@ -17,5 +17,13 @@
 </div>
 
 <p>
-    <a href="@Url.Action("Index", "Personal")" class="btn btn-secondary">Volver a la lista</a>
+    <a href='@Url.Action("Edit", new { id = Model.per_id })' class="btn btn-outline-primary " style="width:100px; height:40px;">
+        Editar
+    </a>
+
+    <br />
+
+    <a href='@Url.Action("Index", "Personal")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+        Regresar
+    </a>
 </p>

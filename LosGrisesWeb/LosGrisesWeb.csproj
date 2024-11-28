@@ -337,10 +337,12 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Images\Agregar.png" />
+    <Content Include="Images\books-4305459_1280.jpg" />
     <Content Include="Images\book_blue.png" />
     <Content Include="Images\Buscar.png" />
     <Content Include="Images\Cancelar.png" />
     <Content Include="Images\Editar.png" />
+    <Content Include="Images\portada.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.esm.js" />

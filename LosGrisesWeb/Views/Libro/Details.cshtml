@@ -80,7 +80,14 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.lib_id}) 
+    <a href='@Url.Action("Edit", new { id = Model.lib_id })' class="btn btn-outline-primary " style="width:100px; height:40px;">
+        Editar
+    </a>
+    
     <br />
-    @Html.ActionLink("Regresar", "Index")
+
+    <a href='@Url.Action("Index", "Libro")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+        Regresar
+    </a>
+
 </p>

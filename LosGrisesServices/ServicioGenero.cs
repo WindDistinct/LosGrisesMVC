@@ -29,7 +29,7 @@ namespace LosGrisesServices
                 {
                     GeneroDC objGenero = new GeneroDC();
 
-                    objGenero.GeneroId = Convert.ToString(resultado.gen_id);
+                    objGenero.GeneroId = (short)resultado.gen_id;
                     objGenero.GeneroNombre = resultado.gen_desc ;
 
                     objLista.Add(objGenero);

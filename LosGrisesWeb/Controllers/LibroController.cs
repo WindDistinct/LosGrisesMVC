@@ -129,8 +129,6 @@ namespace LosGrisesWeb.Controllers
             ViewBag.edi_id = new SelectList(editoriales, "EditorialId", "EditorialNombre", libro.edi_id);
             ViewBag.gen_id = new SelectList(generos, "GeneroId", "GeneroNombre", libro.gen_id);
             ViewBag.EstadoLibro = ObtenerEstados(libro.lib_state);
-
-            ViewBag.EstadoCliente = ObtenerEstados(libro.lib_state);
             return View(libro);
 
         }

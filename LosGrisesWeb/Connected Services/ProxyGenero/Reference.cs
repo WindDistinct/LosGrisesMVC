@@ -23,7 +23,7 @@ namespace LosGrisesWeb.ProxyGenero {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GeneroIdField;
+        private short GeneroIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GeneroNombreField;
@@ -39,12 +39,12 @@ namespace LosGrisesWeb.ProxyGenero {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string GeneroId {
+        public short GeneroId {
             get {
                 return this.GeneroIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.GeneroIdField, value) != true)) {
+                if ((this.GeneroIdField.Equals(value) != true)) {
                     this.GeneroIdField = value;
                     this.RaisePropertyChanged("GeneroId");
                 }

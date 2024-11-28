@@ -8,7 +8,7 @@
   <xs:element name="ArrayOfGeneroDC" nillable="true" type="tns:ArrayOfGeneroDC" />
   <xs:complexType name="GeneroDC">
     <xs:sequence>
-      <xs:element minOccurs="0" name="GeneroId" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GeneroId" type="xs:short" />
       <xs:element minOccurs="0" name="GeneroNombre" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

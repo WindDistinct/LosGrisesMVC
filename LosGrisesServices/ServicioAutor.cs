@@ -28,7 +28,7 @@ namespace LosGrisesServices
                 {
                     AutorDC objAutor = new AutorDC();
 
-                    objAutor.AutorId = Convert.ToString(resultado.aut_id);
+                    objAutor.AutorId = resultado.aut_id;
                     objAutor.AutorNombreApellidos = $"{resultado.aut_nom}, {resultado.aut_ape}";
 
                     objLista.Add(objAutor);
