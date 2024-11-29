@@ -96,7 +96,7 @@ namespace LosGrisesWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PersonalDC personal)
         {
-            /* if (ModelState.IsValid)
+            if (ModelState.IsValid)
              {
                  personal.per_user_reg = "admin";
                  personal.per_fec_reg = DateTime.Now;
@@ -104,19 +104,7 @@ namespace LosGrisesWeb.Controllers
                  return RedirectToAction("Index");
              }
 
-             return View(personal);*/
-
-            try
-            {
-                personal.per_user_reg = "admin";
-                personal.per_fec_reg = DateTime.Now;
-                servicioPersonal.InsertarPersonal(personal);
-                return RedirectToAction("Index");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+             return View(personal);
         }
 
         // GET: Personal/Edit/5
@@ -162,7 +150,7 @@ namespace LosGrisesWeb.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit(PersonalDC personal)
         {
-            /*if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 personal.per_user_mod = "admin";
                 personal.per_fec_mod = DateTime.Now;
@@ -178,18 +166,7 @@ namespace LosGrisesWeb.Controllers
                 }
             }
 
-            return View(personal);*/
-            try
-            {
-                personal.per_user_mod = "admin";
-                personal.per_fec_mod = DateTime.Now;
-                servicioPersonal.ActualizarPersonal(personal);
-                return RedirectToAction("Index");
-            }
-            catch (Exception ex)
-            {
-                throw new Exception(ex.Message);
-            }
+            return View(personal);
         }
 
         public List<SelectListItem> ObtenerEstados(int Estado)

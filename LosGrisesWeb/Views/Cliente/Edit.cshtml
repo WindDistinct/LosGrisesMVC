@@ -119,15 +119,14 @@
  
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Guardar" class="btn btn-outline-primary mt-2" style="width:100px; height:40px;"/>
+            <input type="submit" value="Guardar" class="btn btn-outline-primary mt-2" style="width:100px; height:40px;" />
+            <a href='@Url.Action("Index", "Cliente")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+                Regresar
+            </a>
         </div>
     </div>
 </div>
 }
-
-<a href='@Url.Action("Index", "Cliente")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
-    Regresar
-</a>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

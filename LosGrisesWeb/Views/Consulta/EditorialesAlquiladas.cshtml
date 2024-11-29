@@ -3,7 +3,15 @@
     ViewBag.Title = "EditorialesAlquiladas";
 }
 
+<a href='@Url.Action("Index", "Consulta")' class="btn btn-outline-warning mt-1" style="width:100px; height:40px;">
+    Regresar
+</a>
+
+<br />
+
 <h2>¿Qué editoriales tienen los libros más solicitados por nuestros clientes?</h2>
+
+<br />
 
 @using (Html.BeginForm("EditorialesXRentas", "Consulta"))
 {
@@ -44,5 +52,5 @@
             </tr>
 
         }
-    </tbody>  
+    </tbody>
 </table>

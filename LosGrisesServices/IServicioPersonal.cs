@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -46,6 +47,8 @@ namespace LosGrisesServices
         public String ubg_id { get; set; }
 
         [DataMember]
+        [MaxLength(8), MinLength(8)]
+        [RegularExpression("(^[0-9]+$)", ErrorMessage = "Solo digitos")]
         public String per_dni { get; set; }
 
         [DataMember]
