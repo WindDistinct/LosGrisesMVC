@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="1ceb8794-da1a-41e2-9b7b-20f8a450c15e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioEditorial/mex" Protocol="mex" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="service.wsdl" MetadataType="Wsdl" ID="907c23da-cea3-402f-bc62-dd330dea7827" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioEditorial/mex" />
+    <MetadataFile FileName="service.xsd" MetadataType="Schema" ID="821d5755-8b21-44b5-b0af-f229dac1b70f" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioEditorial/mex" />
+    <MetadataFile FileName="service1.xsd" MetadataType="Schema" ID="b6b47eed-7a8f-4ced-8e80-eb5b6809a0cb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioEditorial/mex" />
+    <MetadataFile FileName="LosGrisesServices.xsd" MetadataType="Schema" ID="e2a9c46c-ccb6-42b3-9351-bdae4c5c15fb" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/LosGrisesServices/ServicioEditorial/mex" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

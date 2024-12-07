@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80FE56D5-D126-4170-91CE-28259640D9CC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>LosGrisesForm</RootNamespace>
+    <AssemblyName>LosGrisesForm</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ProxyAutor\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyEditorial\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyGenero\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyLibro\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyPersonal\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProxyUbigeo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\PersonalGUI\PersonalMan01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\PersonalGUI\PersonalMan01.Designer.cs">
+      <DependentUpon>PersonalMan01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\PersonalGUI\PersonalMan02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\PersonalGUI\PersonalMan02.Designer.cs">
+      <DependentUpon>PersonalMan02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\PersonalGUI\PersonalMan03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\PersonalGUI\PersonalMan03.Designer.cs">
+      <DependentUpon>PersonalMan03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\ClienteGUI\ClienteMan01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\ClienteGUI\ClienteMan01.Designer.cs">
+      <DependentUpon>ClienteMan01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\ClienteGUI\ClienteMan02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\ClienteGUI\ClienteMan02.Designer.cs">
+      <DependentUpon>ClienteMan02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\ClienteGUI\ClienteMan03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\ClienteGUI\ClienteMan03.Designer.cs">
+      <DependentUpon>ClienteMan03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LibroGUI\LibroMan01.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LibroGUI\LibroMan01.Designer.cs">
+      <DependentUpon>LibroMan01.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LibroGUI\LibroMan02.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LibroGUI\LibroMan02.Designer.cs">
+      <DependentUpon>LibroMan02.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LibroGUI\LibroMan03.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LibroGUI\LibroMan03.Designer.cs">
+      <DependentUpon>LibroMan03.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LosGrisesGUI\MainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LosGrisesGUI\MainMenu.Designer.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="LosGrisesGUI\PersonalGUI\PersonalMan01.resx">
+      <DependentUpon>PersonalMan01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\PersonalGUI\PersonalMan02.resx">
+      <DependentUpon>PersonalMan02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\PersonalGUI\PersonalMan03.resx">
+      <DependentUpon>PersonalMan03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\ClienteGUI\ClienteMan01.resx">
+      <DependentUpon>ClienteMan01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\ClienteGUI\ClienteMan02.resx">
+      <DependentUpon>ClienteMan02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\ClienteGUI\ClienteMan03.resx">
+      <DependentUpon>ClienteMan03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\LibroGUI\LibroMan01.resx">
+      <DependentUpon>LibroMan01.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\LibroGUI\LibroMan02.resx">
+      <DependentUpon>LibroMan02.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\LibroGUI\LibroMan03.resx">
+      <DependentUpon>LibroMan03.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LosGrisesGUI\MainMenu.resx">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Resources\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Connected Services\ProxyAutor\LosGrisesForm.ProxyAutor.AutorDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyAutor\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyAutor\service.wsdl" />
+    <None Include="Connected Services\ProxyAutor\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyAutor\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyCliente\LosGrisesForm.ProxyCliente.ClienteDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyCliente\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyCliente\service.wsdl" />
+    <None Include="Connected Services\ProxyCliente\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyCliente\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyEditorial\LosGrisesForm.ProxyEditorial.EditorialDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyEditorial\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyEditorial\service.wsdl" />
+    <None Include="Connected Services\ProxyEditorial\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyEditorial\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyGenero\LosGrisesForm.ProxyGenero.GeneroDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyGenero\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyGenero\service.wsdl" />
+    <None Include="Connected Services\ProxyGenero\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyGenero\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyLibro\LosGrisesForm.ProxyLibro.LibroDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyLibro\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyLibro\service.wsdl" />
+    <None Include="Connected Services\ProxyLibro\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyLibro\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyPersonal\LosGrisesForm.ProxyPersonal.PersonalDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyPersonal\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyPersonal\service.wsdl" />
+    <None Include="Connected Services\ProxyPersonal\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyPersonal\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyUbigeo\LosGrisesForm.ProxyUbigeo.UbigeoDC.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProxyUbigeo\LosGrisesServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyUbigeo\service.wsdl" />
+    <None Include="Connected Services\ProxyUbigeo\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyUbigeo\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ProxyUbigeo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyUbigeo\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyUbigeo\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyCliente\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyCliente\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyPersonal\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyPersonal\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyPersonal\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyLibro\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyLibro\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyLibro\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyAutor\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyAutor\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyAutor\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyEditorial\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyEditorial\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyEditorial\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyGenero\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyGenero\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyGenero\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Resources\libreria.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ProxyAutor\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyCliente\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyEditorial\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyGenero\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyLibro\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyPersonal\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyUbigeo\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

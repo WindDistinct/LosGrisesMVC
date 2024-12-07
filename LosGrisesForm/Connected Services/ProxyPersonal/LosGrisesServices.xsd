@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/LosGrisesServices" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/LosGrisesServices" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="PersonalDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Estado" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_ape_mat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_ape_pat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_dir" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_dni" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_fec_ing" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="per_fec_mod" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="per_fec_reg" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="per_foto" nillable="true" type="xs:base64Binary" />
+      <xs:element minOccurs="0" name="per_id" type="xs:short" />
+      <xs:element minOccurs="0" name="per_mail" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_nom" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_pass" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_state" type="xs:short" />
+      <xs:element minOccurs="0" name="per_tel" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_user_mod" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="per_user_reg" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ubg_id" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PersonalDC" nillable="true" type="tns:PersonalDC" />
+  <xs:complexType name="ArrayOfPersonalDC">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PersonalDC" nillable="true" type="tns:PersonalDC" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPersonalDC" nillable="true" type="tns:ArrayOfPersonalDC" />
+</xs:schema>

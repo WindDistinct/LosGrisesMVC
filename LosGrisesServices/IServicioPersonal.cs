@@ -22,6 +22,8 @@ namespace LosGrisesServices
 
         [OperationContract]
         Boolean ActualizarPersonal(PersonalDC objPersonal);
+        [OperationContract]
+        Boolean ValidarUsuario(String user, String pass);
     }
 
     [DataContract]
@@ -80,6 +82,8 @@ namespace LosGrisesServices
 
         [DataMember]
         public Int16 per_state { get; set; }
+        [DataMember]
+        public String Estado { get; set; }
 
     }
 }

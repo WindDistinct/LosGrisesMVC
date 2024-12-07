@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -79,6 +80,7 @@ namespace LosGrisesServices
                 // Iterar sobre el resultado de la consulta
                 foreach (var personal in query)
                 {
+
                     PersonalDC objPersonal = new PersonalDC
                     {
                         per_id = (short)personal.per_id,
@@ -99,6 +101,15 @@ namespace LosGrisesServices
                         per_fec_mod = personal.per_fec_mod,
                         per_state = Convert.ToInt16(personal.per_state)
                     };
+
+                    if (objPersonal.per_state == 1)
+                    {
+                        objPersonal.Estado = "Activo";
+                    }
+                    else
+                    {
+                        objPersonal.Estado = "Inactivo";
+                    }
 
                     objLista.Add(objPersonal);
                 }
@@ -181,5 +192,25 @@ namespace LosGrisesServices
             }
         }
 
+        public bool ValidarUsuario(string user, string pass)
+        {
+            if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
+            {
+                throw new ArgumentException("El usuario y la contraseña no pueden estar vacíos.");
+            }
+
+            try
+            {
+                return Libreria.usp_ValidarUsuario(user, pass) != null;
+            }
+            catch (SqlException ex)
+            {
+                throw new Exception("Error al acceder a la base de datos: " + ex.Message, ex);
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Ocurrió un error al validar el usuario: " + ex.Message, ex);
+            }
+        }
     }
 }
