@@ -152,6 +152,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ProxyLogin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\ProxyPersonal\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -166,6 +171,7 @@
     <Compile Include="Controllers\ConsultaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LibroController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonalController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -283,12 +289,25 @@
     <None Include="Connected Services\ProxyLibro\service1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ProxyLogin\service.wsdl" />
+    <None Include="Connected Services\ProxyLogin\service.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProxyLogin\service1.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ProxyPersonal\LosGrisesServices.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Connected Services\ProxyLibro\configuration91.svcinfo" />
     <None Include="Connected Services\ProxyLibro\configuration.svcinfo" />
     <None Include="Connected Services\ProxyLibro\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProxyLogin\configuration91.svcinfo" />
+    <None Include="Connected Services\ProxyLogin\configuration.svcinfo" />
+    <None Include="Connected Services\ProxyLogin\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -412,6 +431,7 @@
     <Content Include="Views\Libro\Details.cshtml" />
     <Content Include="Views\Libro\Create.cshtml" />
     <Content Include="Views\Libro\Edit.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -454,6 +474,7 @@
     <WCFMetadataStorage Include="Connected Services\ProxyEditorial\" />
     <WCFMetadataStorage Include="Connected Services\ProxyGenero\" />
     <WCFMetadataStorage Include="Connected Services\ProxyLibro\" />
+    <WCFMetadataStorage Include="Connected Services\ProxyLogin\" />
     <WCFMetadataStorage Include="Connected Services\ProxyPersonal\" />
     <WCFMetadataStorage Include="Connected Services\ProxyUbigeo\" />
   </ItemGroup>
