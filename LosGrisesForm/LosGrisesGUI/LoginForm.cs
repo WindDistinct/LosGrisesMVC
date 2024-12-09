@@ -20,10 +20,14 @@ namespace LosGrisesForm
          {
             if (txtUser.Text.Trim() != "" & txtPassword.Text.Trim() != "")
             {
-                if (personal.ValidarUsuario(txtUser.Text.Trim(), txtPassword.Text.Trim()))
+                PersonalDC per = personal.ValidarUsuario(txtUser.Text.Trim(), txtPassword.Text.Trim());
+
+                if (per.per_mail == txtUser.Text.Trim() &&
+                    per.per_pass == txtPassword.Text.Trim())
                 {
                     this.Hide();
 
+                    // Cargamos el MDIPrincipal
                     MainMenu objMDI = new MainMenu();
                     objMDI.ShowDialog();
                 }

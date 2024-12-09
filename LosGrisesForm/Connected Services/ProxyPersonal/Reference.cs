@@ -359,10 +359,10 @@ namespace LosGrisesForm.ProxyPersonal {
         System.Threading.Tasks.Task<bool> ActualizarPersonalAsync(LosGrisesForm.ProxyPersonal.PersonalDC objPersonal);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioPersonal/ValidarUsuario", ReplyAction="http://tempuri.org/IServicioPersonal/ValidarUsuarioResponse")]
-        bool ValidarUsuario(string user, string pass);
+        LosGrisesForm.ProxyPersonal.PersonalDC ValidarUsuario(string user, string pass);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IServicioPersonal/ValidarUsuario", ReplyAction="http://tempuri.org/IServicioPersonal/ValidarUsuarioResponse")]
-        System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(string user, string pass);
+        System.Threading.Tasks.Task<LosGrisesForm.ProxyPersonal.PersonalDC> ValidarUsuarioAsync(string user, string pass);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -424,11 +424,11 @@ namespace LosGrisesForm.ProxyPersonal {
             return base.Channel.ActualizarPersonalAsync(objPersonal);
         }
         
-        public bool ValidarUsuario(string user, string pass) {
+        public LosGrisesForm.ProxyPersonal.PersonalDC ValidarUsuario(string user, string pass) {
             return base.Channel.ValidarUsuario(user, pass);
         }
         
-        public System.Threading.Tasks.Task<bool> ValidarUsuarioAsync(string user, string pass) {
+        public System.Threading.Tasks.Task<LosGrisesForm.ProxyPersonal.PersonalDC> ValidarUsuarioAsync(string user, string pass) {
             return base.Channel.ValidarUsuarioAsync(user, pass);
         }
     }

@@ -44,8 +44,8 @@ namespace LosGrisesForm
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.optActivo = new System.Windows.Forms.RadioButton();
             this.optInactivo = new System.Windows.Forms.RadioButton();
+            this.optActivo = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.txtApeMat = new System.Windows.Forms.TextBox();
             this.txtMail = new System.Windows.Forms.TextBox();
@@ -60,7 +60,7 @@ namespace LosGrisesForm
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(103, 40);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(353, 20);
             this.txtApellido.TabIndex = 20;
@@ -68,7 +68,7 @@ namespace LosGrisesForm
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(103, 16);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(353, 20);
             this.txtNombre.TabIndex = 19;
@@ -96,7 +96,7 @@ namespace LosGrisesForm
             // btnCancelar
             // 
             this.btnCancelar.Location = new System.Drawing.Point(374, 262);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(82, 23);
             this.btnCancelar.TabIndex = 23;
@@ -107,7 +107,7 @@ namespace LosGrisesForm
             // btnGrabar
             // 
             this.btnGrabar.Location = new System.Drawing.Point(103, 262);
-            this.btnGrabar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGrabar.Margin = new System.Windows.Forms.Padding(2);
             this.btnGrabar.Name = "btnGrabar";
             this.btnGrabar.Size = new System.Drawing.Size(83, 23);
             this.btnGrabar.TabIndex = 22;
@@ -180,17 +180,6 @@ namespace LosGrisesForm
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Estado";
             // 
-            // optActivo
-            // 
-            this.optActivo.AutoSize = true;
-            this.optActivo.Location = new System.Drawing.Point(7, 20);
-            this.optActivo.Name = "optActivo";
-            this.optActivo.Size = new System.Drawing.Size(55, 17);
-            this.optActivo.TabIndex = 0;
-            this.optActivo.TabStop = true;
-            this.optActivo.Text = "Activo";
-            this.optActivo.UseVisualStyleBackColor = true;
-            // 
             // optInactivo
             // 
             this.optInactivo.AutoSize = true;
@@ -201,6 +190,17 @@ namespace LosGrisesForm
             this.optInactivo.TabStop = true;
             this.optInactivo.Text = "Inactivo";
             this.optInactivo.UseVisualStyleBackColor = true;
+            // 
+            // optActivo
+            // 
+            this.optActivo.AutoSize = true;
+            this.optActivo.Location = new System.Drawing.Point(7, 20);
+            this.optActivo.Name = "optActivo";
+            this.optActivo.Size = new System.Drawing.Size(55, 17);
+            this.optActivo.TabIndex = 0;
+            this.optActivo.TabStop = true;
+            this.optActivo.Text = "Activo";
+            this.optActivo.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -231,6 +231,7 @@ namespace LosGrisesForm
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(242, 20);
             this.txtPass.TabIndex = 34;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtTel
             // 
@@ -289,7 +290,7 @@ namespace LosGrisesForm
             this.Controls.Add(this.lblApe);
             this.Controls.Add(this.lblNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PersonalMan02";

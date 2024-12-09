@@ -66,7 +66,7 @@
   <xs:element name="ValidarUsuarioResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ValidarUsuarioResult" type="xs:boolean" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/LosGrisesServices" minOccurs="0" name="ValidarUsuarioResult" nillable="true" type="q5:PersonalDC" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

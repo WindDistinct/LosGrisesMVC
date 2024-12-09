@@ -23,7 +23,7 @@ namespace LosGrisesServices
         [OperationContract]
         Boolean ActualizarPersonal(PersonalDC objPersonal);
         [OperationContract]
-        Boolean ValidarUsuario(String user, String pass);
+        PersonalDC ValidarUsuario(String user, String pass);
     }
 
     [DataContract]

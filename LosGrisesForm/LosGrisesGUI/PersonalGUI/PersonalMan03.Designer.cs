@@ -100,6 +100,7 @@ namespace LosGrisesForm
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(242, 20);
             this.txtPass.TabIndex = 55;
+            this.txtPass.UseSystemPasswordChar = true;
             // 
             // txtMail
             // 
@@ -315,7 +316,7 @@ namespace LosGrisesForm
             this.Controls.Add(this.lblApe);
             this.Controls.Add(this.lblNombre);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "PersonalMan03";

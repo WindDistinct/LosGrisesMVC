@@ -3,9 +3,6 @@ using System.Collections.Generic;
 using System.Data.Entity.Core;
 using System.Data.SqlClient;
 using System.Linq;
-using System.Runtime.Serialization;
-using System.ServiceModel;
-using System.Text;
 
 namespace LosGrisesServices
 {
@@ -192,16 +189,31 @@ namespace LosGrisesServices
             }
         }
 
-        public bool ValidarUsuario(string user, string pass)
+        public PersonalDC ValidarUsuario(string user, string pass)
         {
             if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(pass))
             {
                 throw new ArgumentException("El usuario y la contraseña no pueden estar vacíos.");
             }
 
+            PersonalDC objPersonal = new PersonalDC();
+
             try
             {
-                return Libreria.usp_ValidarUsuario(user, pass) != null;
+                tb_Personal objConsulta = (
+                    from personal in Libreria.tb_Personal
+                    where personal.per_mail == user || personal.per_pass == pass
+                    select personal
+                ).FirstOrDefault();
+
+                if(objConsulta != null)
+                {
+                    objPersonal.per_mail = objConsulta.per_mail;
+                    objPersonal.per_pass = objConsulta.per_pass;
+                }
+
+                return objPersonal;
+
             }
             catch (SqlException ex)
             {
