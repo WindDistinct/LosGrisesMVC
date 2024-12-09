@@ -45,6 +45,7 @@
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data" />
+    <Reference Include="System.IdentityModel" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
@@ -58,6 +59,7 @@
     <Compile Include="IServicioEditorial.cs" />
     <Compile Include="IServicioGenero.cs" />
     <Compile Include="IServicioLibro.cs" />
+    <Compile Include="IServicioLogin.cs" />
     <Compile Include="IServicioPersonal.cs" />
     <Compile Include="IServicioUbigeo.cs" />
     <Compile Include="Libreria.Context.cs">
@@ -82,6 +84,7 @@
     <Compile Include="ServicioEditorial.cs" />
     <Compile Include="ServicioGenero.cs" />
     <Compile Include="ServicioLibro.cs" />
+    <Compile Include="ServicioLogin.cs" />
     <Compile Include="ServicioPersonal.cs" />
     <Compile Include="ServicioUbigeo.cs" />
     <Compile Include="tb_Almacen.cs">
